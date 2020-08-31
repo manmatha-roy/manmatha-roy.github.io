@@ -28,7 +28,7 @@ Work experience
 
 * July,2020 - Current: Research Engineer
   * R C Bose Center for Cryptology and Security
-  * Duties included: Cryptanalysis
+  * Area: Cryptanalysis
   * Supervisor: Professor Subhamoy Maitra
   
 Skills
