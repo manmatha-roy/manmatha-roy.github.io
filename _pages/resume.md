@@ -16,17 +16,17 @@ Education
 
 Work experience
 ======
-* Aug,2012 - July, 2016: Research Engineer
+* Aug, 2012 - July, 2016: Research Engineer
   * Center for Distributed Computing
   * Area: Design and Development of Mission-Critical Systems
   * Supervisor: Professor Chandan Mazumdar
 
-* Aug,2016 - July, 2018: Research Engineer
+* Aug, 2016 - July, 2018: Research Engineer
   * Center for Distributed Computing
-  * Area: Design and Development of Software Defined Network driven Infrastructure
+  * Area: Design and Development of Software Defined Network Driven Infrastructure
   * Supervisor: Professor Chandan Mazumdar
 
-* July,2020 - Current: Research Engineer
+* July, 2020 - Current: Research Engineer
   * R C Bose Center for Cryptology and Security
   * Area: Cryptanalysis
   * Supervisor: Professor Subhamoy Maitra
