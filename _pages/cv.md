@@ -11,30 +11,32 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.E in Computer Science, Jadavpur Univeristy, 2012
+* M.Tech in Computer Science, Indian Statistical Institute, 2020
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Aug,2012 - July, 2016: Research Engineer
+  * Center for Distributed Computing
+  * Area: Design and Development of Mission-Critical Systems
+  * Supervisor: Professor Chandan Mazumdar
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Aug,2016 - July, 2018: Research Engineer
+  * Center for Distributed Computing
+  * Area: Design and Development of Software Defined Network driven Infrastructure
+  * Supervisor: Professor Chandan Mazumdar
+
+* July,2020 - Current: Research Engineer
+  * R C Bose Center for Cryptology and Security
+  * Duties included: Cryptanalysis
+  * Supervisor: Professor Subhamoy Maitra
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Language: C/C++, Python, Sage, R, Octave 
+* Penetration Testing
+* Linux Kernel Development
+* Secure Coding
 
 Publications
 ======
