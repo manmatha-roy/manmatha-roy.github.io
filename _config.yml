@@ -5,3 +5,7 @@ baseurl: "" # leave empty if deploying to root
 url: "https://manmatha-roy.github.io" # change to your repo URL
 markdown: kramdown
 plugins: [jekyll-feed]
+
+exclude:
+  - "*.sh"
+  - "scripts/"

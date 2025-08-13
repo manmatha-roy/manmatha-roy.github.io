@@ -6,7 +6,6 @@ git checkout main
 
 # Stage all files except _site
 git add --all
-git reset _site
 
 # Commit with date & time
 git commit -m "Backup on $(date '+%Y-%m-%d %H:%M:%S')"
