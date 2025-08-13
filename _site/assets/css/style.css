@@ -1,0 +1,106 @@
+:root{
+  --accent: #2b6cb0;
+  --muted: #6b7280;
+  --bg: #ffffff;
+  --maxw: 1000px;
+  --radius: 12px;
+}
+
+*{box-sizing: border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+  margin: 0;
+  background: var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width: var(--maxw);
+  margin: 6.5rem auto 4rem;
+  padding: 1.25rem;
+}
+
+.site-header{
+  position: fixed;
+  inset: 0 0 auto 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.95);
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid #e6edf3;
+  backdrop-filter: blur(6px);
+}
+
+.brand-name{
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  color: #0f172a;
+  text-decoration: none;
+}
+.brand-sub{font-size:0.85rem;color:var(--muted)}
+
+.site-nav a{
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 25px rgba(15,23,42,0.06);
+  background: linear-gradient(180deg, rgba(235,245,255,0.9), rgba(255,255,255,0.8));
+}
+
+.profile-photo{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#e6f0ff,#f7fbff);
+  display: block;
+}
+
+.hero-text h1{
+  margin: 0 0 0.25rem 0;
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+}
+
+.lead{color:var(--muted); margin-top:0; font-size:1rem}
+
+.btn{
+  display:inline-block;
+  padding:0.45rem 0.9rem;
+  border-radius:8px;
+  text-decoration:none;
+  background:var(--accent);
+  color:white;
+  margin-right:0.5rem;
+  font-weight:600;
+}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(43,108,176,0.12)}
+
+.about, .highlights{margin-top:1.25rem; padding:1rem; border-radius:10px; background:#fff}
+
+.page-title{font-family:'Merriweather',serif;font-size:1.6rem;margin-bottom:0.6rem}
+
+.publications-list{list-style:none;padding-left:0}
+
+.pub-meta{padding:0.6rem 0;border-bottom:1px solid #f1f5f9; display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap}
+.pub-meta a{color:var(--accent)}
+
+.toggle-abstract{margin-left:auto;padding:0.25rem 0.5rem;border-radius:6px;border:1px solid #e6eef9;background:#fff;color:var(--accent);cursor:pointer}
+
+.abstract{padding:0.75rem 1rem;background:#fbfdff;border-radius:8px;margin-top:0.5rem;color:#374151}
+
+.site-footer{border-top:1px solid #e6edf3;padding:1rem 0;text-align:center;color:var(--muted);margin-top:2rem}
+.footer-inner{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap}
