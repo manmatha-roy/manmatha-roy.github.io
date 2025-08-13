@@ -29,5 +29,9 @@ fi
 git add --all
 git commit -m "Site publish $(date '+%Y-%m-%d %H:%M:%S')"
 git push origin gh-pages --force
+
+echo "✅ Published to gh-pages"
+
+
 cd ..
 
