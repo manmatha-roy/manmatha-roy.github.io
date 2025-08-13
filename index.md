@@ -58,8 +58,16 @@ title: Home
 </p>
 
 <p>
-  Before moving to ISI Kolkata, I spent several years at the Centre for Distributed Computing (Jadavpur University) working on the design 
-  and development of serveral mission-critical software systems.
+Before moving to ISI Kolkata, I spent several years at the Centre for Distributed Computing, Jadavpur University, where I contributed to projects involving the design and development of high-performance software systems, with a strong emphasis on resilience and reliability for mission and safety critical infrastructure applications.
+</p>
+
+<p>
+  You may find my résumé in 
+  <a href="assets/docs/resume.pdf" target="_blank">Link to Résumé</a>. 
+</p>
+<p>
+    Feel free to reach me at 
+  <a href="mailto:reach.manmatha@gmail.com">reach.manmatha@gmail.com</a>.
 </p>
 
 </section>
