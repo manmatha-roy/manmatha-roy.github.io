@@ -13,5 +13,5 @@ git commit -m "Backup on $(date '+%Y-%m-%d %H:%M:%S')"
 # Push to main
 git push origin main
 
-echo "✅ Backup pushed to main branch"
+echo "✅ Source pushed to main branch"
 
