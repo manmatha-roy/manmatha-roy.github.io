@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Build jekyl site
+bundle exec jekyll build 
+
+
 # Go into the _site directory
 cd _site
 
