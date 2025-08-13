@@ -65,10 +65,15 @@ Before moving to ISI Kolkata, I spent several years at the Centre for Distribute
   You may find my résumé  
   <a href="assets/docs/resume.pdf" target="_blank">here</a>. 
 </p>
+
 <p>
-    Feel free to reach me at 
-  <a href="mailto:reach.manmatha@gmail.com">reach.manmatha@gmail.com</a>.
+  <!-- Feel free to reach me at <img src="assets/email.png" alt="Email Address" style="vertical-align: middle;"> -->
+  Feel free to reach me at
+  <span style="font-family: 'Courier New', Courier, monospace;">
+    reach dot firstname @  gmail dot com
+  </span>
 </p>
+
 
 </section>
 
