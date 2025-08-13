@@ -62,8 +62,8 @@ Before moving to ISI Kolkata, I spent several years at the Centre for Distribute
 </p>
 
 <p>
-  You may find my résumé in 
-  <a href="assets/docs/resume.pdf" target="_blank">Link to Résumé</a>. 
+  You may find my résumé  
+  <a href="assets/docs/resume.pdf" target="_blank">here</a>. 
 </p>
 <p>
     Feel free to reach me at 
