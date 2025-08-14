@@ -61,10 +61,14 @@ title: Home
 Before moving to ISI Kolkata, I spent a couple of years at the Centre for Distributed Computing, Jadavpur University, where I worked in projects involving the design and development of high-performance software systems, with a strong emphasis on resilience and reliability for mission and safety critical infrastructure applications.
 </p>
 
+<!-- 
+
 <p>
   You may find my resume  
   <a href="assets/docs/resume.pdf" target="_blank">here</a>. 
 </p>
+
+-->
 
 <p>
   <!-- Feel free to reach me at <img src="assets/email.png" alt="Email Address" style="vertical-align: middle;"> -->
