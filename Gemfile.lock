@@ -43,6 +43,8 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.13.2)
@@ -78,6 +80,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4)
   jekyll-feed
+  jekyll-sitemap (~> 1.4)
 
 BUNDLED WITH
    2.7.1

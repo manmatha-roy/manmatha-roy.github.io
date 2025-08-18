@@ -4,8 +4,11 @@ description: ""
 baseurl: "" # leave empty if deploying to root
 url: "https://manmatha-roy.github.io" # change to your repo URL
 markdown: kramdown
-plugins: [jekyll-feed]
+plugins: 
+    - jekyll-feed
+    - jekyll-sitemap
 
 exclude:
   - "*.sh"
   - "scripts/"
+  - "README.md"

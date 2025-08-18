@@ -52,9 +52,8 @@ title: Home
   I am a researcher at the Indian Statistical Institute, Kolkata, where I am also pursuing a PhD under the joint supervision of 
   <a href="https://isi.irins.org/profile/61161" target="_blank">Prof. Subhamoy Maitra</a> and 
   <a href="https://sites.google.com/site/homepagearijitghosh/" target="_blank">Dr. Arijit Ghosh</a>. 
-  My research interests are in Theoretical Computer Science, with a focus on Boolean-valued functions over discrete algebraic structures. 
-  I investigate their structural properties and develop efficient algorithms for learning and testing these functions, 
-  with applications to cryptography, coding theory, and learning theory.
+
+My research lies in Theoretical Computer Science, with a particular focus on Boolean functions. I study their structural properties and design efficient algorithms for problems arising in cryptography, coding theory, and learning theory. 
 </p>
 
 <p>
