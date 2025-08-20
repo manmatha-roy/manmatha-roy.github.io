@@ -57,7 +57,7 @@ My research lies in Theoretical Computer Science, with a particular focus on Boo
 </p>
 
 <p>
-Before moving to ISI Kolkata, I spent a couple of years at the Centre for Distributed Computing, Jadavpur University, where I worked in projects involving the design and development of high-performance software systems, with a strong emphasis on resilience and reliability for mission and safety critical infrastructure applications.
+Before moving to ISI Kolkata, I spent a couple of years at the Centre for Distributed Computing, Jadavpur University, where I worked in projects involving the design and development of mission critical applications.
 </p>
 
 <!-- 
@@ -67,24 +67,17 @@ Before moving to ISI Kolkata, I spent a couple of years at the Centre for Distri
   <a href="assets/docs/resume.pdf" target="_blank">here</a>. 
 </p>
 
--->
 
 <p>
-  <!-- Feel free to reach me at <img src="assets/email.png" alt="Email Address" style="vertical-align: middle;"> -->
-  I prefer to be contacted via email 
-  (
+  Email:  
   <span style="font-family: 'Courier New', Courier, monospace;">
-    reach dot firstname at  gmail dot com
+    reach dot firstname at  gmail dot com / firstname at  isical dot ac dot in
   </span>
-
-    /  
-
-  <span style="font-family: 'Courier New', Courier, monospace;">
-    firstname at  isical dot ac dot in
-  </span>
-    )
 </p>
 
+Feel free to reach me at <img src="assets/email.png" alt="Email Address" style="vertical-align: middle;"> 
+
+-->
 
 </section>
 
