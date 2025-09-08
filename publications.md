@@ -15,14 +15,14 @@ title: Publications
 
   <li style="margin-bottom: 2em;">
     <strong>Testing Fourier Sparsity over Any Finite Vector Space</strong><br>
-    Arijit Ghosh, Cand Manmatha Roy<br>
+    Arijit Ghosh, and Manmatha Roy<br>
     <em>Preprint</em><br>
   </li>
   
 
   <li style="margin-bottom: 2em;">
     <strong>Approximating Sumset Size via Dense Coset Decomposition</strong><br>
-    Arijit Ghosh, Cand Manmatha Roy<br>
+    Arijit Ghosh, and Manmatha Roy<br>
     <em>Submitted</em><br>
   </li>
 
