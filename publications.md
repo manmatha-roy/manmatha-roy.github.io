@@ -16,7 +16,7 @@ title: Publications
   <li style="margin-bottom: 2em;">
     <strong>Testing Fourier Sparsity over Any Finite Vector Space</strong><br>
     Arijit Ghosh, Cand Manmatha Roy<br>
-    <em>Submitted</em><br>
+    <em>Preprint</em><br>
   </li>
   
 
