@@ -27,7 +27,7 @@ title: Publications
   </li>
 
   <li style="margin-bottom: 2em;">
-    <strong>Tight Bounds for Testing Isomorphism of Boolean Functions</strong><br>
+    <strong>Spectral Norm, Economical Sieve, and Linear Invariance Testing of Boolean functions</strong><br>
     Swarnalipa Dutta, Arijit Ghosh, Chandrima Kayal, Manaswi Paraashar, and Manmatha Roy<br>
     <em>Submitted</em><br>
   </li>
@@ -45,7 +45,7 @@ title: Publications
   </li>
 
   <li style="margin-bottom: 2em;">
-    <strong>Testing Fourier Sparsity</strong><br>
+    <strong>Price of Parsimony: Complexity of Fourier Sparsity Testing</strong><br>
     Arijit Ghosh, and Manmatha Roy<br>
     <em>Submitted</em><br>
   </li>
