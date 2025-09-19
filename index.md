@@ -49,7 +49,7 @@ title: Home
 
 <section class="about" style="font-size: 1.15rem; line-height: 1.6; max-width: 700px; margin: 1.5rem auto;">
 <p>
-  I am a researcher at the Indian Statistical Institute, Kolkata, where I am also pursuing a PhD under the joint supervision of 
+  I am a researcher at the <a href="https://www.isical.ac.in/" target="_blank">Indian Statistical Institute, Kolkata</a>, where I am also pursuing a PhD under the joint supervision of 
   <a href="https://isi.irins.org/profile/61161" target="_blank">Prof. Subhamoy Maitra</a> and 
   <a href="https://sites.google.com/site/homepagearijitghosh/" target="_blank">Dr. Arijit Ghosh</a>. 
 
