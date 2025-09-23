@@ -9,7 +9,7 @@ title: Research
 }
 </style>
 
-<em>Author names are in alphabetical order of last names, as is common in Theorical Computer Science <em>
+<em>Author names are in alphabetical order of last names, as is common in Theoretical Computer Science <em>
 
 <br>
 <br>
