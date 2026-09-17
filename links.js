@@ -19,10 +19,10 @@
 
 const PEOPLE = {
   "Subhamoy Maitra":          "https://www.isical.ac.in/~subho/",
-  "Arijit Ghosh":             "https://www.isical.ac.in/~arijit/",
+  "Arijit Ghosh":             "https://sites.google.com/site/homepagearijitghosh/",
   "Swarnalipa Dutta":         "https://dblp.org/search?q=Swarnalipa+Dutta",
-  "Chandrima Kayal":          "https://dblp.org/search?q=Chandrima+Kayal",
-  "Manaswi Paraashar":        "https://dblp.org/search?q=Manaswi+Paraashar",
+  "Chandrima Kayal":          "https://sites.google.com/view/chandrimakayal/home",
+  "Manaswi Paraashar":        "https://sites.google.com/view/manaswi-paraashar/home",
   "Sourav Chakraborty":       "https://dblp.org/search?q=Sourav+Chakraborty",
   "Bimal Mandal":             "https://dblp.org/search?q=Bimal+Mandal",
   "Deng Tang":                "https://dblp.org/search?q=Deng+Tang",
@@ -34,11 +34,13 @@ const PEOPLE = {
 /* ---------- 2. Papers ----------------------------------------------
 
    The key on the left matches the data-key="..." on each paper in
-   research.html. Fill in whichever URLs you have and delete the rest —
-   blank ones are skipped.
+   research.html. Fill in whichever URLs you have — blank ones are
+   skipped, so a paper with nothing filled in shows no link row.
 
-   "dblp": "auto" builds a DBLP search link from the paper's title.
-   Handy until you paste the real arXiv / DOI link in.                */
+   Paste a DBLP record link (dblp.org/rec/...), an arXiv abs page, a
+   DOI, a PDF in assets/ — whatever you have. The key name is what
+   appears on the button, so you can invent your own (code, poster,
+   talk, video).                                                      */
 
 const PAPERS = {
 
@@ -51,18 +53,18 @@ const PAPERS = {
   "arithmetic-regularity":   { arXiv: "", ePrint: "", pdf: "" },
 
   /* --- published --- */
-  "spectral-shadows": { arXiv: "", DOI: "", dblp: "auto", slides: "", video: "" },
-  "implicit-sensing": { arXiv: "", DOI: "", dblp: "auto", slides: "", poster: "",
+  "spectral-shadows": { arXiv: "", DOI: "", dblp: "", slides: "", video: "" },
+  "implicit-sensing": { arXiv: "", DOI: "", dblp: "", slides: "", poster: "",
                         /* OpenReview page for the ICLR version */ link: "" },
-  "economical-sieve": { arXiv: "", DOI: "", dblp: "auto", slides: "", video: "" },
+  "economical-sieve": { arXiv: "", DOI: "", dblp: "", slides: "", video: "" },
 
-  "price-of-parsimony":   { arXiv: "", DOI: "", dblp: "auto", slides: "", poster: "" },
-  "iso-abelian":          { arXiv: "", DOI: "", dblp: "auto", slides: "" },
-  "maiorana-mcfarland":   { ePrint: "", DOI: "", dblp: "auto" },
-  "differential-uniformity": { ePrint: "", DOI: "", dblp: "auto", slides: "" },
+  "price-of-parsimony":   { arXiv: "", DOI: "", dblp: "", slides: "", poster: "" },
+  "iso-abelian":          { arXiv: "", DOI: "", dblp: "", slides: "" },
+  "maiorana-mcfarland":   { ePrint: "", DOI: "", dblp: "" },
+  "differential-uniformity": { ePrint: "", DOI: "", dblp: "", slides: "" },
 
-  "bent-balanced":  { ePrint: "", DOI: "", dblp: "auto" },
-  "sbox-spectra":   { ePrint: "", DOI: "", dblp: "auto" },
+  "bent-balanced":  { ePrint: "", DOI: "", dblp: "" },
+  "sbox-spectra":   { ePrint: "", DOI: "", dblp: "" },
 };
 
 
@@ -109,6 +111,16 @@ const PAPERS = {
       });
     });
   }
+
+  /* --- number the entries ------------------------------------------- */
+  /* One continuous sequence over manuscripts AND publications. The
+     oldest entry (bottom of the page) is 1, counting upwards, so the
+     newest work carries the highest number. Add or remove a paper and
+     the numbering fixes itself.                                       */
+
+  const entries = Array.from(document.querySelectorAll("ol.pubs > li"));
+  const total = entries.length;
+  entries.forEach((li, i) => li.setAttribute("data-num", total - i));
 
   /* --- add the link row under each paper ---------------------------- */
 
