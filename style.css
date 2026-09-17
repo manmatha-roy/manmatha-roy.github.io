@@ -1,0 +1,279 @@
+/* ------------------------------------------------------------------
+   Minimal academic theme, in the style of thomas-kesselheim.de
+   Plain CSS, no build step, no frameworks.
+   ------------------------------------------------------------------ */
+
+:root {
+  --text:        #1f1f1f;
+  --text-muted:  #5a5a5a;
+  --rule:        #dcdcdc;
+  --link:        #14487a;
+  --link-hover:  #0b2c4d;
+  --bg:          #ffffff;
+  --accent-bg:   #f6f6f4;
+  --measure:     820px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- navigation ---------- */
+
+nav.topnav {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 38px;
+}
+
+nav.topnav .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+
+nav.topnav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+nav.topnav a:hover { color: var(--link); }
+
+nav.topnav a.current {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 2px solid var(--text);
+  padding-bottom: 2px;
+}
+
+/* ---------- header block ---------- */
+
+header.masthead {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+header.masthead img.portrait {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  background: var(--accent-bg);
+  border: 1px solid var(--rule);
+}
+
+header.masthead h1 {
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+header.masthead .role {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* ---------- typography ---------- */
+
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+  margin: 42px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 26px 0 10px;
+}
+
+p { margin: 0 0 14px; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+ul.plain { list-style: none; padding: 0; margin: 0; }
+
+/* ---------- highlighted link list (front page) ---------- */
+
+ul.highlights { list-style: none; padding: 0; margin: 4px 0 0; }
+ul.highlights li { margin: 0 0 8px; }
+ul.highlights li::before {
+  content: "\203A";
+  color: var(--text-muted);
+  margin-right: 9px;
+}
+
+/* ---------- labelled field list (contact) ---------- */
+
+dl.fields { margin: 0; }
+
+dl.fields dt {
+  float: left;
+  clear: left;
+  width: 120px;
+  color: var(--text-muted);
+  font-size: 15px;
+  padding: 3px 0;
+}
+
+dl.fields dd {
+  margin: 0 0 0 132px;
+  padding: 3px 0;
+}
+
+/* ---------- CV timeline ---------- */
+
+dl.timeline { margin: 0; }
+
+dl.timeline dt {
+  float: left;
+  clear: left;
+  width: 120px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+  padding: 4px 0;
+}
+
+dl.timeline dd {
+  margin: 0 0 0 132px;
+  padding: 4px 0;
+}
+
+/* ---------- publications ---------- */
+
+ol.pubs {
+  list-style: none;
+  counter-reset: pub;
+  padding: 0;
+  margin: 0;
+}
+
+ol.pubs > li {
+  position: relative;
+  padding: 0 0 16px 30px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f0f0ee;
+}
+
+ol.pubs > li:last-child { border-bottom: 0; }
+
+ol.pubs > li::before {
+  counter-increment: pub;
+  content: counter(pub) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 15px;
+}
+
+.pub-title { font-weight: 600; }
+.pub-authors { color: var(--text-muted); font-size: 15.5px; }
+.pub-venue { font-style: italic; }
+.pub-links { font-size: 14.5px; margin-top: 3px; }
+.pub-links a { margin-right: 12px; }
+
+.year-head {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin: 30px 0 10px;
+}
+
+/* ---------- teaching table ---------- */
+
+table.courses {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6px;
+}
+
+table.courses th,
+table.courses td {
+  text-align: left;
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+table.courses th {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+table.courses td.term {
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- footer ---------- */
+
+footer.pagefoot {
+  margin-top: 56px;
+  border-top: 1px solid var(--rule);
+  padding: 16px 0 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+
+  header.masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  header.masthead img.portrait { width: 104px; height: 104px; }
+  header.masthead h1 { font-size: 28px; }
+
+  dl.fields dt,
+  dl.timeline dt {
+    float: none;
+    width: auto;
+    padding-bottom: 0;
+  }
+
+  dl.fields dd,
+  dl.timeline dd {
+    margin-left: 0;
+    padding-top: 0;
+    margin-bottom: 10px;
+  }
+}
