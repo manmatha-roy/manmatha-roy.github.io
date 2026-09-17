@@ -13,7 +13,7 @@
   --ink:        #111111;   /* headings, titles          */
   --text:       #111111;   /* body copy                 */
   --muted:      #424242;   /* secondary text            */
-  --faint:      #757575;   /* labels, numbers, footer   */
+  --faint:      #6f6f6f;   /* labels, numbers, footer   */
 
   --rule:       #e8e8e8;   /* section rules, nav border  */
   --hairline:   #f0f0f0;   /* rules between entries      */
@@ -46,6 +46,30 @@ body {
   max-width: var(--measure);
   margin: 0 auto;
   padding: 0 28px;
+}
+
+/* ---------- utilities ---------- */
+
+/* Visible to screen readers, invisible on screen.
+   Used by the <caption> on the teaching tables. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keyboard focus ring. Mouse clicks do not trigger it. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* ---------- navigation ---------- */
@@ -199,6 +223,10 @@ p.lede strong { font-weight: 600; }
   border-left: 1px solid var(--hairline);
 }
 
+/* The label inside an interest block is an <h2> for document structure
+   (h1 -> h2, no skipped level), but is styled as a small caps label.
+   The h3 selector is kept so older markup still renders correctly. */
+.interest-block h2,
 .interest-block h3 {
   font-family: var(--sans);
   margin: 0 0 13px;
@@ -207,7 +235,13 @@ p.lede strong { font-weight: 600; }
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--faint);
+  /* undo the global h2 rule */
+  padding-bottom: 0;
+  border-bottom: 0;
+  position: static;
 }
+
+.interest-block h2::after { content: none; }
 
 ul.taglist {
   list-style: none;
@@ -357,7 +391,8 @@ ol.pubs > li {
 ol.pubs > li:last-child { border-bottom: 0; }
 
 /* The number is written in by links.js: one sequence across the whole
-   page, counting up from the oldest entry at the bottom. */
+   page, counting up from the oldest entry at the bottom.
+   If the script does not run, data-num is absent and no number shows. */
 ol.pubs > li::before {
   content: attr(data-num);
   position: absolute;
@@ -403,7 +438,10 @@ ol.pubs > li::before {
   text-decoration: none;
 }
 
+/* Year markers are <h3> elements so the page has a real heading
+   outline. The rules below override the global h3 styling. */
 .year-head {
+  font-family: var(--sans);
   font-size: 11.5px;
   font-weight: 600;
   color: var(--faint);
@@ -417,6 +455,16 @@ table.courses {
   width: 100%;
   border-collapse: collapse;
   margin-top: 8px;
+}
+
+table.courses caption {
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--faint);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding-bottom: 8px;
 }
 
 table.courses th,
@@ -498,5 +546,16 @@ footer.pagefoot {
     margin-left: 0;
     padding-top: 2px;
     margin-bottom: 12px;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
