@@ -381,7 +381,7 @@ ol.pubs > li::before {
 
 .pub-authors { color: var(--muted); font-size: 15px; }
 
-.pub-venue { font-style: italic; color: var(--text); font-size: 15px; }
+.pub-venue { font-style: normal; color: var(--text); font-size: 15px; }
 
 .pub-links { margin-top: 8px; }
 
