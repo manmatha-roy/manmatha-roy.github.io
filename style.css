@@ -457,15 +457,7 @@ table.courses {
   margin-top: 8px;
 }
 
-table.courses caption {
-  text-align: left;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--faint);
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  padding-bottom: 8px;
-}
+
 
 table.courses th,
 table.courses td {
