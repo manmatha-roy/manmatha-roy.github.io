@@ -122,6 +122,21 @@ const PAPERS = {
   const total = entries.length;
   entries.forEach((li, i) => li.setAttribute("data-num", total - i));
 
+  /* Older versions of style.css numbered each list with its own CSS
+     counter, which restarted at every year. This overrides that, so the
+     numbering below is correct whichever style.css is live.           */
+  const numberingCSS = document.createElement("style");
+  numberingCSS.textContent =
+    "ol.pubs { counter-reset: none !important; }" +
+    "ol.pubs > li::before {" +
+    "  content: attr(data-num) !important;" +
+    "  counter-increment: none !important;" +
+    "  position: absolute; left: 0; top: 2px;" +
+    "  width: 24px; text-align: right;" +
+    "  font-variant-numeric: tabular-nums; font-size: 13px;" +
+    "}";
+  document.head.appendChild(numberingCSS);
+
   /* --- add the link row under each paper ---------------------------- */
 
   document.querySelectorAll("[data-key]").forEach(li => {
