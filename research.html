@@ -20,7 +20,7 @@
 
 <main class="wrap">
 
-  <h1 style="font-size:30px;font-weight:600;margin:0 0 16px;">Research</h1>
+  <h1 class="pagetitle">Research</h1>
 
   <p>
     My primary area is the analysis of Boolean functions, together with its connections to
@@ -31,30 +31,40 @@
     testing, learning and recovery.
   </p>
 
+  <p class="profilerow">
+    <!-- EDIT: paste your real profile URLs. -->
+    Full listings:
+    <a href="https://dblp.org/search?q=Manmatha+Roy">DBLP</a> &middot;
+    <a href="https://scholar.google.com/">Google&nbsp;Scholar</a> &middot;
+    <a href="https://arxiv.org/a/">arXiv</a> &middot;
+    <a href="https://eprint.iacr.org/">IACR&nbsp;ePrint</a> &middot;
+    <a href="https://orcid.org/">ORCID</a>
+  </p>
+
   <h2>Manuscripts</h2>
 
   <ol class="pubs">
-    <li>
+    <li data-key="nonlinearity-estimation">
       <div class="pub-title">On Nonlinearity Estimation Problem</div>
       <div class="pub-authors">with Arijit Ghosh and Subhamoy Maitra</div>
     </li>
-    <li>
+    <li data-key="distribution-free">
       <div class="pub-title">Distribution Free Fourier Sparsity Testing</div>
       <div class="pub-authors">with Arijit Ghosh</div>
     </li>
-    <li>
+    <li data-key="sumset-size">
       <div class="pub-title">Approximating Sumset Size via Dense Coset Decomposition</div>
       <div class="pub-authors">with Arijit Ghosh</div>
     </li>
-    <li>
+    <li data-key="near-optimal-testing">
       <div class="pub-title">Testing Fourier Sparsity Near Optimally</div>
       <div class="pub-authors">with Arijit Ghosh</div>
     </li>
-    <li>
+    <li data-key="exact-recovery">
       <div class="pub-title">Exact Fourier-Sparse Recovery Made Simple</div>
       <div class="pub-authors">with Arijit Ghosh</div>
     </li>
-    <li>
+    <li data-key="arithmetic-regularity">
       <div class="pub-title">Constructive Arithmetic Regularity for Abelian Groups</div>
       <div class="pub-authors">with Swarnalipa Dutta, Arijit Ghosh and Chandrima Kayal</div>
     </li>
@@ -64,17 +74,17 @@
 
   <p class="year-head">2026</p>
   <ol class="pubs">
-    <li>
+    <li data-key="spectral-shadows">
       <div class="pub-title">Spectral Shadows: When Communication Complexity Meets Linear Invariance Testing</div>
       <div class="pub-authors">with Swarnalipa Dutta, Arijit Ghosh, Chandrima Kayal and Manaswi Paraashar</div>
       <div><span class="pub-venue">Computational Complexity</span></div>
     </li>
-    <li>
+    <li data-key="implicit-sensing">
       <div class="pub-title">Testing Fourier Sparsity via Implicit Sensing</div>
       <div class="pub-authors">with Arijit Ghosh and Subhamoy Maitra</div>
       <div><span class="pub-venue">ICLR 2026</span></div>
     </li>
-    <li>
+    <li data-key="economical-sieve">
       <div class="pub-title">Spectral Norm, Economical Sieve, and Linear Invariance Testing of Boolean Functions</div>
       <div class="pub-authors">with Swarnalipa Dutta, Arijit Ghosh, Chandrima Kayal and Manaswi Paraashar</div>
       <div><span class="pub-venue">STACS 2026</span></div>
@@ -83,22 +93,22 @@
 
   <p class="year-head">2025</p>
   <ol class="pubs">
-    <li>
+    <li data-key="price-of-parsimony">
       <div class="pub-title">Price of Parsimony: Complexity of Fourier Sparsity Testing</div>
       <div class="pub-authors">with Arijit Ghosh</div>
       <div><span class="pub-venue">NeurIPS 2025</span></div>
     </li>
-    <li>
+    <li data-key="iso-abelian">
       <div class="pub-title">Testing Isomorphism of Boolean Functions over Abelian Groups</div>
       <div class="pub-authors">with Swarnalipa Dutta, Arijit Ghosh, Chandrima Kayal and Manaswi Paraashar</div>
       <div><span class="pub-venue">RANDOM 2025</span></div>
     </li>
-    <li>
+    <li data-key="maiorana-mcfarland">
       <div class="pub-title">Construction of Maiorana&ndash;McFarland type cryptographically significant Boolean functions with good implementation properties</div>
       <div class="pub-authors">with Deng Tang, Anupam Chattopadhyay, Bimal Mandal and Subhamoy Maitra</div>
       <div><span class="pub-venue">Communications in Cryptology</span></div>
     </li>
-    <li>
+    <li data-key="differential-uniformity">
       <div class="pub-title">On Differential Uniformity of Extremal Functions</div>
       <div class="pub-authors">with Nikolay Stoyanov Kaleyski</div>
       <div><span class="pub-venue">BFA 2025</span></div>
@@ -107,7 +117,7 @@
 
   <p class="year-head">2022</p>
   <ol class="pubs">
-    <li>
+    <li data-key="bent-balanced">
       <div class="pub-title">Modifying Bent Functions to Obtain Balanced Ones with High Nonlinearity</div>
       <div class="pub-authors">with Subhamoy Maitra and Bimal Mandal</div>
       <div><span class="pub-venue">Indocrypt 2022</span></div>
@@ -116,17 +126,27 @@
 
   <p class="year-head">2020</p>
   <ol class="pubs">
-    <li>
+    <li data-key="sbox-spectra">
       <div class="pub-title">Experimental Results on Higher-Order Differential Spectra of 6 and 8-bit Invertible S-Boxes</div>
       <div class="pub-authors">with Deng Tang, Bimal Mandal and Subhamoy Maitra</div>
       <div><span class="pub-venue">SPACE 2020</span></div>
     </li>
   </ol>
 
-  <!--
-    To add a link row under any entry, paste this inside that <li>:
-    <div class="pub-links"><a href="URL">arXiv</a><a href="URL">ePrint</a><a href="URL">slides</a></div>
-  -->
+  <h2>Collaborators</h2>
+
+  <ul class="people">
+    <li class="pub-authors">Subhamoy Maitra</li>
+    <li class="pub-authors">Arijit Ghosh</li>
+    <li class="pub-authors">Swarnalipa Dutta</li>
+    <li class="pub-authors">Chandrima Kayal</li>
+    <li class="pub-authors">Manaswi Paraashar</li>
+    <li class="pub-authors">Sourav Chakraborty</li>
+    <li class="pub-authors">Bimal Mandal</li>
+    <li class="pub-authors">Deng Tang</li>
+    <li class="pub-authors">Anupam Chattopadhyay</li>
+    <li class="pub-authors">Nikolay Stoyanov Kaleyski</li>
+  </ul>
 
 </main>
 
@@ -134,5 +154,6 @@
   <div class="wrap">&copy; Manmatha Roy</div>
 </footer>
 
+<script src="links.js"></script>
 </body>
 </html>
