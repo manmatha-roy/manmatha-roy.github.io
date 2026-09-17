@@ -198,8 +198,24 @@ ol.pubs > li::before {
 .pub-title { font-weight: 600; }
 .pub-authors { color: var(--text-muted); font-size: 15.5px; }
 .pub-venue { font-style: italic; }
-.pub-links { font-size: 14.5px; margin-top: 3px; }
-.pub-links a { margin-right: 12px; }
+.pub-links { margin-top: 7px; }
+
+.pub-links a {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1px 8px;
+  margin: 0 6px 4px 0;
+}
+
+.pub-links a:hover {
+  color: var(--link);
+  border-color: var(--link);
+  text-decoration: none;
+}
 
 .year-head {
   font-size: 15px;
@@ -207,6 +223,60 @@ ol.pubs > li::before {
   color: var(--text-muted);
   letter-spacing: 0.06em;
   margin: 30px 0 10px;
+}
+
+/* ---------- page title on inner pages ---------- */
+
+h1.pagetitle {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+/* ---------- profile links row ---------- */
+
+p.profilerow {
+  color: var(--text-muted);
+  font-size: 15px;
+  background: var(--accent-bg);
+  border: 1px solid var(--rule);
+  padding: 10px 14px;
+  margin-bottom: 4px;
+}
+
+/* ---------- author links ---------- */
+
+a.author-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #b9b9b4;
+}
+
+a.author-link:hover {
+  color: var(--link);
+  border-bottom-color: var(--link);
+  text-decoration: none;
+}
+
+/* ---------- collaborator list ---------- */
+
+ul.people {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  columns: 2;
+  column-gap: 40px;
+}
+
+ul.people li {
+  margin: 0 0 7px;
+  break-inside: avoid;
+  font-size: 15.5px;
+}
+
+@media (max-width: 620px) {
+  ul.people { columns: 1; }
 }
 
 /* ---------- teaching table ---------- */
