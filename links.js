@@ -20,13 +20,13 @@
 const PEOPLE = {
   "Subhamoy Maitra":          "https://www.isical.ac.in/~subho/",
   "Arijit Ghosh":             "https://sites.google.com/site/homepagearijitghosh/",
-  "Swarnalipa Dutta":         "https://dblp.org/search?q=Swarnalipa+Dutta",
+  "Swarnalipa Dutta":         "https://scholar.google.com/citations?user=KWfaL7YAAAAJ&hl=en",
   "Chandrima Kayal":          "https://sites.google.com/view/chandrimakayal/home",
   "Manaswi Paraashar":        "https://sites.google.com/view/manaswi-paraashar/home",
   "Sourav Chakraborty":       "https://dblp.org/search?q=Sourav+Chakraborty",
-  "Bimal Mandal":             "https://dblp.org/search?q=Bimal+Mandal",
-  "Deng Tang":                "https://dblp.org/search?q=Deng+Tang",
-  "Anupam Chattopadhyay":     "https://dblp.org/search?q=Anupam+Chattopadhyay",
+  "Bimal Mandal":             "https://scholar.google.com/citations?user=LTOTMj0AAAAJ&hl=en",
+  "Deng Tang":                "https://scholar.google.com/citations?user=Fhn_DMsAAAAJ&hl=en",
+  "Anupam Chattopadhyay":     "https://scholar.google.com/citations?user=TIt4ggwAAAAJ&hl=en",
   "Nikolay Stoyanov Kaleyski":"https://dblp.org/search?q=Nikolay+Kaleyski",
 };
 
