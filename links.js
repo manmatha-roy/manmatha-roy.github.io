@@ -27,7 +27,7 @@ const PEOPLE = {
   "Bimal Mandal":             "https://scholar.google.com/citations?user=LTOTMj0AAAAJ&hl=en",
   "Deng Tang":                "https://scholar.google.com/citations?user=Fhn_DMsAAAAJ&hl=en",
   "Anupam Chattopadhyay":     "https://scholar.google.com/citations?user=TIt4ggwAAAAJ&hl=en",
-  "Nikolay Stoyanov Kaleyski":"https://dblp.org/search?q=Nikolay+Kaleyski",
+  "Nikolay Stoyanov Kaleyski":"https://scholar.google.com/citations?user=YkieG_AAAAAJ&hl=en",
 };
 
 
