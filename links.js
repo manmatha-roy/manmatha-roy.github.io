@@ -44,27 +44,49 @@ const PEOPLE = {
 
 const PAPERS = {
 
-  /* --- manuscripts --- */
+  /* --- manuscripts ---
+     Nothing is indexed yet, so these stay blank until you post a
+     preprint. Fill in arXiv / ePrint / pdf and the link row appears. */
   "nonlinearity-estimation": { arXiv: "", ePrint: "", pdf: "" },
   "distribution-free":       { arXiv: "", ePrint: "", pdf: "" },
   "sumset-size":             { arXiv: "", ePrint: "", pdf: "" },
   "near-optimal-testing":    { arXiv: "", ePrint: "", pdf: "" },
-  "exact-recovery":          { arXiv: "", ePrint: "", pdf: "" },
+  "exact-recovery":          { arXiv: "", ePrint: "", pdf: "",
+                               code: "https://github.com/manmatha-roy/simple-sparse-recovery" },
   "arithmetic-regularity":   { arXiv: "", ePrint: "", pdf: "" },
 
-  /* --- published --- */
-  "spectral-shadows": { arXiv: "", DOI: "", dblp: "", slides: "", video: "" },
-  "implicit-sensing": { arXiv: "", DOI: "", dblp: "", slides: "", poster: "",
+  /* --- published ---
+     dblp: "auto" builds a DBLP title search, which always resolves.
+     It is a placeholder. Replace each one with the real arXiv / ePrint
+     / DOI link when you have it, and drop the "auto". */
+
+  /* no publisher link yet — keep DBLP fallback */
+  "spectral-shadows": { arXiv: "", DOI: "", dblp: "auto", slides: "", video: "" },
+  "implicit-sensing": { arXiv: "", DOI: "", dblp: "auto", slides: "", poster: "",
                         /* OpenReview page for the ICLR version */ link: "" },
-  "economical-sieve": { arXiv: "", DOI: "", dblp: "", slides: "", video: "" },
 
-  "price-of-parsimony":   { arXiv: "", DOI: "", dblp: "", slides: "", poster: "" },
-  "iso-abelian":          { arXiv: "", DOI: "", dblp: "", slides: "" },
-  "maiorana-mcfarland":   { ePrint: "", DOI: "", dblp: "" },
-  "differential-uniformity": { ePrint: "", DOI: "", dblp: "", slides: "" },
+  "economical-sieve": { DOI: "https://doi.org/10.4230/LIPIcs.STACS.2026.30",
+                         link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.STACS.2026.30",
+                         arXiv: "", slides: "", video: "" },
 
-  "bent-balanced":  { ePrint: "", DOI: "", dblp: "" },
-  "sbox-spectra":   { ePrint: "", DOI: "", dblp: "" },
+  "price-of-parsimony": { DOI: "https://doi.org/10.52202/085713-5509",
+                           link: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f17376c941d5882050e2e366bb74dffa-Abstract-Conference.html",
+                           arXiv: "", slides: "", poster: "" },
+  "iso-abelian":        { DOI: "https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
+                           link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
+                           arXiv: "", slides: "" },
+  "maiorana-mcfarland": { DOI: "https://doi.org/10.62056/akmpgyl7s",
+                           ePrint: "" },
+
+  /* no publisher link yet — keep DBLP fallback */
+  "differential-uniformity": { ePrint: "", DOI: "", dblp: "auto", slides: "" },
+
+  "bent-balanced":  { DOI: "https://doi.org/10.1007/978-3-031-22912-1_20",
+                       link: "https://link.springer.com/chapter/10.1007/978-3-031-22912-1_20",
+                       ePrint: "" },
+  "sbox-spectra":   { DOI: "https://doi.org/10.1007/978-3-030-66626-2_9",
+                       link: "https://link.springer.com/chapter/10.1007/978-3-030-66626-2_9",
+                       ePrint: "" },
 };
 
 
@@ -113,12 +135,14 @@ const PAPERS = {
   }
 
   /* --- number the entries ------------------------------------------- */
-  /* One continuous sequence over manuscripts AND publications. The
-     oldest entry (bottom of the page) is 1, counting upwards, so the
-     newest work carries the highest number. Add or remove a paper and
-     the numbering fixes itself.                                       */
+  /* Published work only. Manuscripts under review are deliberately left
+     unnumbered so the list cannot be read as a longer publication count.
+     The oldest publication (bottom of the page) is 1, counting upwards.
+     Add or remove a paper and the numbering fixes itself.              */
 
-  const entries = Array.from(document.querySelectorAll("ol.pubs > li"));
+  const entries = Array.from(
+    document.querySelectorAll("ol.pubs:not(#manuscripts) > li")
+  );
   const total = entries.length;
   entries.forEach((li, i) => li.setAttribute("data-num", total - i));
 
@@ -147,7 +171,7 @@ const PAPERS = {
     const row = document.createElement("div");
     row.className = "pub-links";
 
-    const LABELS = { dblp: "DBLP", pdf: "PDF", doi: "DOI", link: "page" };
+    const LABELS = { dblp: "DBLP", pdf: "PDF", doi: "DOI", link: "page", code: "code" };
 
     Object.keys(spec).forEach(label => {
       let url = spec[label];
