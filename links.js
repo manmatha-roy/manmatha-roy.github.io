@@ -51,41 +51,29 @@ const PAPERS = {
   "distribution-free":       { arXiv: "", ePrint: "", pdf: "" },
   "sumset-size":             { arXiv: "", ePrint: "", pdf: "" },
   "near-optimal-testing":    { arXiv: "", ePrint: "", pdf: "" },
-  "exact-recovery":          { arXiv: "", ePrint: "", pdf: "",
-                               code: "https://github.com/manmatha-roy/simple-sparse-recovery" },
+  "exact-recovery":          { arXiv: "", ePrint: "", pdf: "" },
   "arithmetic-regularity":   { arXiv: "", ePrint: "", pdf: "" },
 
-  /* --- published ---
-     dblp: "auto" builds a DBLP title search, which always resolves.
-     It is a placeholder. Replace each one with the real arXiv / ePrint
-     / DOI link when you have it, and drop the "auto". */
+  /* --- published --- */
 
-  /* no publisher link yet — keep DBLP fallback */
-  "spectral-shadows": { arXiv: "", DOI: "", dblp: "auto", slides: "", video: "" },
-  "implicit-sensing": { arXiv: "", DOI: "", dblp: "auto", slides: "", poster: "",
-                        /* OpenReview page for the ICLR version */ link: "" },
+  "spectral-shadows": { link: "", arXiv: "", slides: "", video: "" },
+  "implicit-sensing": { link: "", arXiv: "", slides: "", poster: "" },
 
-  "economical-sieve": { DOI: "https://doi.org/10.4230/LIPIcs.STACS.2026.30",
-                         link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.STACS.2026.30",
+  "economical-sieve": { link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.STACS.2026.30",
                          arXiv: "", slides: "", video: "" },
 
-  "price-of-parsimony": { DOI: "https://doi.org/10.52202/085713-5509",
-                           link: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f17376c941d5882050e2e366bb74dffa-Abstract-Conference.html",
+  "price-of-parsimony": { link: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f17376c941d5882050e2e366bb74dffa-Abstract-Conference.html",
                            arXiv: "", slides: "", poster: "" },
-  "iso-abelian":        { DOI: "https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
-                           link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
+  "iso-abelian":        { link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
                            arXiv: "", slides: "" },
-  "maiorana-mcfarland": { DOI: "https://doi.org/10.62056/akmpgyl7s",
+  "maiorana-mcfarland": { link: "https://doi.org/10.62056/akmpgyl7s",
                            ePrint: "" },
 
-  /* no publisher link yet — keep DBLP fallback */
-  "differential-uniformity": { ePrint: "", DOI: "", dblp: "auto", slides: "" },
+  "differential-uniformity": { link: "", ePrint: "", slides: "" },
 
-  "bent-balanced":  { DOI: "https://doi.org/10.1007/978-3-031-22912-1_20",
-                       link: "https://link.springer.com/chapter/10.1007/978-3-031-22912-1_20",
+  "bent-balanced":  { link: "https://link.springer.com/chapter/10.1007/978-3-031-22912-1_20",
                        ePrint: "" },
-  "sbox-spectra":   { DOI: "https://doi.org/10.1007/978-3-030-66626-2_9",
-                       link: "https://link.springer.com/chapter/10.1007/978-3-030-66626-2_9",
+  "sbox-spectra":   { link: "https://link.springer.com/chapter/10.1007/978-3-030-66626-2_9",
                        ePrint: "" },
 };
 
@@ -171,7 +159,7 @@ const PAPERS = {
     const row = document.createElement("div");
     row.className = "pub-links";
 
-    const LABELS = { dblp: "DBLP", pdf: "PDF", doi: "DOI", link: "page", code: "code" };
+    const LABELS = { pdf: "PDF", link: "link" };
 
     Object.keys(spec).forEach(label => {
       let url = spec[label];
