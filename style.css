@@ -418,6 +418,16 @@ ol.pubs > li::before {
 
 .pub-venue { font-style: normal; color: var(--text); font-size: 15px; }
 
+/* Status label on manuscripts under review. */
+.pub-status {
+  margin-top: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
 .pub-links { margin-top: 8px; }
 
 .pub-links a {
