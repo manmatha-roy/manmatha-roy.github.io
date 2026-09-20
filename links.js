@@ -57,7 +57,7 @@ const PAPERS = {
   /* --- published --- */
 
   "spectral-shadows": { link: "", arXiv: "", slides: "", video: "" },
-  "implicit-sensing": { link: "", arXiv: "", slides: "", poster: "" },
+  "implicit-sensing": { link: "https://proceedings.iclr.cc/paper_files/paper/2026/hash/634cb3ace86e0908a721865a73f2e36e-Abstract-Conference.html", arXiv: "", slides: "", poster: "" },
 
   "economical-sieve": { link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.STACS.2026.30",
                          arXiv: "", slides: "", video: "" },
@@ -66,7 +66,7 @@ const PAPERS = {
                            arXiv: "", slides: "", poster: "" },
   "iso-abelian":        { link: "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2025.66",
                            arXiv: "", slides: "" },
-  "maiorana-mcfarland": { link: "https://doi.org/10.62056/akmpgyl7s",
+  "maiorana-mcfarland": { link: "https://cic.iacr.org/p/2/2/15",
                            ePrint: "" },
 
   "differential-uniformity": { link: "", ePrint: "", slides: "" },
