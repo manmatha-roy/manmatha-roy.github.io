@@ -158,17 +158,38 @@ const PAPERS = {
     const row = document.createElement("div");
     row.className = "pub-links";
 
-    const LABELS = { pdf: "PDF", link: "link" };
+    const LABELS = { pdf: "PDF", doi: "DOI", eprint: "ePrint", arxiv: "arXiv" };
 
-    Object.keys(spec).forEach(label => {
-      let url = spec[label];
+    /* A key of "link" is generic, so name the button after where it
+       actually goes. Anything not listed falls back to the key name. */
+    const BY_HOST = [
+      ["openreview.net",        "OpenReview"],
+      ["proceedings.neurips.cc","NeurIPS"],
+      ["proceedings.iclr.cc",   "ICLR"],
+      ["drops.dagstuhl.de",     "LIPIcs"],
+      ["link.springer.com",     "Springer"],
+      ["cic.iacr.org",          "IACR CiC"],
+      ["eprint.iacr.org",       "ePrint"],
+      ["arxiv.org",             "arXiv"],
+      ["doi.org",               "DOI"],
+      ["dblp.org",              "DBLP"],
+    ];
+
+    Object.keys(spec).forEach(key => {
+      const url = spec[key];
       if (!url) return;
-      if (url === "auto") {
-        url = "https://dblp.org/search?q=" + encodeURIComponent(title.trim());
+
+      let text = LABELS[key.toLowerCase()] || key;
+      if (key.toLowerCase() === "link") {
+        text = "paper";
+        for (const [host, name] of BY_HOST) {
+          if (url.indexOf(host) !== -1) { text = name; break; }
+        }
       }
+
       const a = document.createElement("a");
       a.href = url;
-      a.textContent = LABELS[label.toLowerCase()] || label;
+      a.textContent = text;
       row.appendChild(a);
     });
 
