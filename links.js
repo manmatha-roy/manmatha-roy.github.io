@@ -48,14 +48,13 @@ const PAPERS = {
      Nothing is indexed yet, so these stay blank until you post a
      preprint. Fill in arXiv / ePrint / pdf and the link row appears. */
   "nonlinearity-estimation": { arXiv: "", ePrint: "", pdf: "" },
-  "distribution-free":       { arXiv: "", ePrint: "", pdf: "" },
   "sumset-size":             { arXiv: "", ePrint: "", pdf: "" },
   "near-optimal-testing":    { arXiv: "", ePrint: "", pdf: "" },
   "exact-recovery":          { arXiv: "", ePrint: "", pdf: "" },
   "arithmetic-regularity":   { arXiv: "", ePrint: "", pdf: "" },
 
   /* --- published --- */
-
+  "distribution-free":       { arXiv: https://openreview.net/forum?id=Yptam5J8AE#discussion"", ePrint: "", pdf: "" },
   "spectral-shadows": { link: "", arXiv: "", slides: "", video: "" },
   "implicit-sensing": { link: "https://proceedings.iclr.cc/paper_files/paper/2026/hash/634cb3ace86e0908a721865a73f2e36e-Abstract-Conference.html", arXiv: "", slides: "", poster: "" },
 
