@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 /* ------------------------------------------------------------------
-   Minimal academic theme — serif headings, sans body.
+   Manmatha Roy — personal site
+   Open Sans on warm paper, light headings, deep blue links.
    Plain CSS, no build step, no frameworks.
    ------------------------------------------------------------------ */
 
 :root {
-  --serif:      "Source Serif 4", Georgia, "Times New Roman", serif;
-  --sans:       "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans:       'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  /* Palette sampled from thomas-kesselheim.de */
-  --ink:        #111111;   /* headings, titles          */
-  --text:       #111111;   /* body copy                 */
-  --muted:      #424242;   /* secondary text            */
-  --faint:      #6f6f6f;   /* labels, numbers, footer   */
+  --ink:        #444444;   /* headings                    */
+  --text:       #515151;   /* body copy                   */
+  --muted:      #6b6b6b;   /* secondary text              */
+  --faint:      #8e8e88;   /* labels, numbers, footer     */
 
-  --rule:       #e8e8e8;   /* section rules, nav border  */
-  --hairline:   #f0f0f0;   /* rules between entries      */
+  --rule:       #e2e0d4;   /* section rules, nav border   */
+  --hairline:   #edebe0;   /* rules between entries       */
 
-  --accent:     #2a7ae2;   /* links                      */
-  --accent-dk:  #1a5cb8;   /* link hover                 */
+  --accent:     #0055aa;   /* links                       */
+  --accent-dk:  #003d7a;   /* link hover                  */
 
-  --bg:         #fdfdfd;
-  --panel:      #f5f5f5;
+  --bg:         #fffff8;   /* warm paper                  */
+  --panel:      #faf9ee;
+  --card:       #fffffc;
 
-  --measure:    810px;
+  --measure:    880px;
 }
 
 * { box-sizing: border-box; }
@@ -36,8 +36,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 18.5px;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -45,13 +45,11 @@ body {
 .wrap {
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 /* ---------- utilities ---------- */
 
-/* Visible to screen readers, invisible on screen.
-   Used by the <caption> on the teaching tables. */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -64,7 +62,6 @@ body {
   border: 0;
 }
 
-/* Keyboard focus ring. Mouse clicks do not trigger it. */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent);
@@ -76,26 +73,24 @@ button:focus-visible {
 
 nav.topnav {
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 46px;
+  margin-bottom: 28px;
   background: var(--bg);
 }
 
 nav.topnav .wrap {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
-  padding-top: 20px;
-  padding-bottom: 16px;
+  gap: 30px;
+  padding-top: 18px;
+  padding-bottom: 14px;
 }
 
 nav.topnav a {
   position: relative;
   color: var(--muted);
   text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.02em;
   padding-bottom: 3px;
 }
 
@@ -118,31 +113,43 @@ nav.topnav a:hover::after { transform: scaleX(1); }
 nav.topnav a.current { color: var(--ink); }
 nav.topnav a.current::after { transform: scaleX(1); background: var(--ink); }
 
+/* ---------- spectrum strip ----------
+   A sparse Fourier spectrum: a flat field of near-zero coefficients with
+   a handful of large ones. Inline SVG, so no extra request, crisp at any
+   size. Decorative only. */
+
+main.wrap::before {
+  content: "";
+  display: block;
+  height: 66px;
+  margin-bottom: 28px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27880%27%20height%3D%2766%27%20viewBox%3D%270%200%20880%2066%27%3E%3Crect%20x%3D%271%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2710%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2719%27%20y%3D%2759.0%27%20width%3D%272.6%27%20height%3D%273.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2728%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2737%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2746%27%20y%3D%2759.7%27%20width%3D%272.6%27%20height%3D%272.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2755%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2764%27%20y%3D%2730%27%20width%3D%272.6%27%20height%3D%2732%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%2773%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2782%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2791%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27100%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27109%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27118%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27127%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27136%27%20y%3D%2759.5%27%20width%3D%272.6%27%20height%3D%272.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27145%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27154%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27163%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27172%27%20y%3D%2714%27%20width%3D%272.6%27%20height%3D%2748%27%20fill%3D%27%230055aa%27%20opacity%3D%270.8%27%2F%3E%3Crect%20x%3D%27181%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27190%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27199%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27208%27%20y%3D%2761.0%27%20width%3D%272.6%27%20height%3D%271.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27217%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27226%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27235%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27244%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27253%27%20y%3D%2742%27%20width%3D%272.6%27%20height%3D%2720%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27262%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27271%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27280%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27289%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27298%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27307%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27316%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27325%27%20y%3D%2759.5%27%20width%3D%272.6%27%20height%3D%272.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27334%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27343%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27352%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27361%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27370%27%20y%3D%275%27%20width%3D%272.6%27%20height%3D%2757%27%20fill%3D%27%230055aa%27%20opacity%3D%270.8%27%2F%3E%3Crect%20x%3D%27379%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27388%27%20y%3D%2759.4%27%20width%3D%272.6%27%20height%3D%272.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27397%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27406%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27415%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27424%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27433%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27442%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27451%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27460%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27469%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27478%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27487%27%20y%3D%2761.0%27%20width%3D%272.6%27%20height%3D%271.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27496%27%20y%3D%2737%27%20width%3D%272.6%27%20height%3D%2725%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27505%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27514%27%20y%3D%2759.0%27%20width%3D%272.6%27%20height%3D%273.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27523%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27532%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27541%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27550%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27559%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27568%27%20y%3D%2721%27%20width%3D%272.6%27%20height%3D%2741%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27577%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27586%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27595%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27604%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27613%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27622%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27631%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27640%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27649%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27658%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27667%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27676%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27685%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27694%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27703%27%20y%3D%2745%27%20width%3D%272.6%27%20height%3D%2717%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27712%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27721%27%20y%3D%2759.4%27%20width%3D%272.6%27%20height%3D%272.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27730%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27739%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27748%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27757%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27766%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27775%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27784%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27793%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27802%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27811%27%20y%3D%2733%27%20width%3D%272.6%27%20height%3D%2729%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27820%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27829%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27838%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27847%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27856%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27865%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%270%27%20y%3D%2762%27%20width%3D%27880%27%20height%3D%271%27%20fill%3D%27%23e2e0d4%27%2F%3E%3C%2Fsvg%3E") left bottom / auto 100% repeat-x;
+}
+
 /* ---------- header block ---------- */
 
 header.masthead {
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
 header.masthead img.portrait {
-  width: 136px;
-  height: 136px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   flex: 0 0 auto;
   background: var(--panel);
-  box-shadow: 0 0 0 1px var(--rule), 0 6px 22px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 0 1px var(--rule), 0 6px 20px rgba(80, 75, 50, 0.08);
 }
 
 header.masthead h1 {
-  font-family: var(--serif);
-  font-size: 43px;
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
   color: var(--ink);
   margin: 0 0 8px;
 }
@@ -150,21 +157,18 @@ header.masthead h1 {
 header.masthead .role {
   margin: 0;
   color: var(--muted);
-  font-size: 16.5px;
-  letter-spacing: 0.01em;
+  font-size: 17px;
 }
 
 /* ---------- typography ---------- */
 
 h2 {
   position: relative;
-  font-family: var(--serif);
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
   color: var(--ink);
-  letter-spacing: -0.005em;
-  margin: 50px 0 16px;
-  padding-bottom: 9px;
+  margin: 48px 0 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -173,47 +177,50 @@ h2::after {
   position: absolute;
   left: 0;
   bottom: -1px;
-  width: 38px;
-  height: 2px;
-  background: var(--accent);
+  width: 51px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2751%27%20height%3D%2716%27%20viewBox%3D%270%200%2051%2016%27%3E%3Crect%20x%3D%270%27%20y%3D%2711%27%20width%3D%273%27%20height%3D%275%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%273%27%20height%3D%2716%27%20fill%3D%27%230055aa%27%2F%3E%3Crect%20x%3D%2716%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%2724%27%20y%3D%275%27%20width%3D%273%27%20height%3D%2711%27%20fill%3D%27%239a968a%27%2F%3E%3Crect%20x%3D%2732%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%2740%27%20y%3D%279%27%20width%3D%273%27%20height%3D%277%27%20fill%3D%27%239a968a%27%2F%3E%3Crect%20x%3D%2748%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3C%2Fsvg%3E") left bottom no-repeat;
 }
 
 h3 {
-  font-family: var(--serif);
-  font-size: 19.5px;
+  font-size: 19px;
   font-weight: 600;
   color: var(--ink);
-  margin: 28px 0 10px;
+  margin: 26px 0 10px;
+}
+
+h1.pagetitle {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin: 0 0 18px;
 }
 
 p { margin: 0 0 16px; }
 
 a { color: var(--accent); text-decoration: none; }
 
-a:hover { color: var(--accent-dk); text-decoration: underline; text-underline-offset: 2px; }
+a:hover {
+  color: var(--accent-dk);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 ul.plain { list-style: none; padding: 0; margin: 0; }
 
-/* ---------- lede paragraph ---------- */
-
-p.lede {
-  font-family: var(--serif);
-  font-size: 21px;
-  line-height: 1.58;
-  color: var(--ink);
-  margin-bottom: 30px;
-}
+p.lede { font-size: 19px; line-height: 1.6; margin-bottom: 20px; }
 
 p.lede strong { font-weight: 600; }
 
-/* ---------- research interests block ---------- */
+/* ---------- interests ---------- */
 
 .interests {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  margin: 0 0 30px;
+  margin: 0 0 28px;
 }
 
 .interest-block { padding: 20px 28px 22px 0; }
@@ -223,19 +230,14 @@ p.lede strong { font-weight: 600; }
   border-left: 1px solid var(--hairline);
 }
 
-/* The label inside an interest block is an <h2> for document structure
-   (h1 -> h2, no skipped level), but is styled as a small caps label.
-   The h3 selector is kept so older markup still renders correctly. */
 .interest-block h2,
 .interest-block h3 {
-  font-family: var(--sans);
   margin: 0 0 13px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--faint);
-  /* undo the global h2 rule */
   padding-bottom: 0;
   border-bottom: 0;
   position: static;
@@ -256,21 +258,17 @@ ul.taglist li {
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--text);
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--rule);
   border-radius: 100px;
   padding: 3px 13px;
 }
 
-p.interest-note {
-  margin: 0;
-  font-size: 16.5px;
-  color: var(--muted);
-}
+p.interest-note { margin: 0; font-size: 16.5px; color: var(--muted); }
 
 /* ---------- highlighted link list ---------- */
 
-ul.highlights { list-style: none; padding: 0; margin: 4px 0 0; }
+ul.highlights { list-style: none; padding: 0; margin: 6px 0 0; }
 
 ul.highlights li { margin: 0 0 10px; }
 
@@ -289,17 +287,14 @@ dl.fields dt {
   clear: left;
   width: 124px;
   color: var(--faint);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 7px 0 0;
+  padding: 8px 0 0;
 }
 
-dl.fields dd {
-  margin: 0 0 0 140px;
-  padding: 3px 0;
-}
+dl.fields dd { margin: 0 0 0 140px; padding: 3px 0; }
 
 /* ---------- timeline ---------- */
 
@@ -311,31 +306,17 @@ dl.timeline dt {
   width: 138px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
-  font-size: 15.5px;
+  font-size: 16px;
   padding: 5px 0;
 }
 
-dl.timeline dd {
-  margin: 0 0 0 154px;
-  padding: 5px 0;
-}
-
-/* ---------- page title on inner pages ---------- */
-
-h1.pagetitle {
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  margin: 0 0 18px;
-}
+dl.timeline dd { margin: 0 0 0 154px; padding: 5px 0; }
 
 /* ---------- profile links row ---------- */
 
 p.profilerow {
   color: var(--muted);
-  font-size: 15.5px;
+  font-size: 16px;
   background: var(--panel);
   border: 1px solid var(--rule);
   border-radius: 4px;
@@ -348,7 +329,7 @@ p.profilerow {
 a.author-link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px dotted #c4c4c4;
+  border-bottom: 1px dotted #c8c6b8;
 }
 
 a.author-link:hover {
@@ -367,79 +348,93 @@ ul.people {
   column-gap: 44px;
 }
 
-ul.people li {
-  margin: 0 0 9px;
-  break-inside: avoid;
-  font-size: 16.5px;
-}
+ul.people li { margin: 0 0 9px; break-inside: avoid; font-size: 17px; }
 
 /* ---------- publications ---------- */
 
-ol.pubs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+ol.pubs { list-style: none; padding: 0; margin: 0; }
 
 ol.pubs > li {
   position: relative;
-  padding: 0 0 20px 34px;
-  margin-bottom: 18px;
+  padding: 0 0 16px 34px;
+  margin-bottom: 16px;
   border-bottom: 1px solid var(--hairline);
 }
 
 ol.pubs > li:last-child { border-bottom: 0; }
 
-/* The number is written in by links.js: one sequence across the whole
-   page, counting up from the oldest entry at the bottom.
-   If the script does not run, data-num is absent and no number shows. */
+/* Manuscripts are unnumbered, so they need no hanging indent. */
+ol.pubs#manuscripts > li { padding-left: 0; }
+
+/* The number is written in by links.js: one sequence over the published
+   work, counting up from the oldest entry at the bottom. If the script
+   does not run, data-num is absent and no number shows. */
 ol.pubs > li::before {
   content: attr(data-num);
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 4px;
   width: 24px;
   text-align: right;
   color: var(--faint);
   font-variant-numeric: tabular-nums;
-  font-size: 13.5px;
+  font-size: 14px;
 }
 
 .pub-title {
-  font-family: var(--serif);
-  font-size: 19px;
+  font-size: 18.5px;
   font-weight: 600;
-  line-height: 1.38;
+  line-height: 1.4;
   color: var(--ink);
   margin-bottom: 2px;
 }
 
-.pub-authors { color: var(--muted); font-size: 16px; }
+.pub-authors { color: var(--muted); font-size: 16.5px; }
 
-.pub-venue { font-style: normal; color: var(--text); font-size: 16px; }
+/* The venue sits on its own line under the authors and carries the
+   link to the paper, so there is one obvious thing to click. */
+.pub-meta { margin-top: 3px; }
 
-/* Status label on manuscripts under review. */
+.pub-venue {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.5px;
+  color: var(--text);
+}
+
+a.pub-venue { color: var(--accent); }
+
+a.pub-venue:hover {
+  color: var(--accent-dk);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Same row, for manuscripts that have no venue yet. */
 .pub-status {
-  margin-top: 6px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--faint);
 }
 
-.pub-links { margin-top: 8px; }
+/* Anything beyond the venue link — slides, a poster, code — trails
+   after it as a small pill. */
+.pub-links { display: inline; margin-left: 10px; }
 
 .pub-links a {
   display: inline-block;
-  font-size: 13px;
-  letter-spacing: 0.03em;
+  position: relative;
+  top: -1px;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   color: var(--muted);
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--rule);
   border-radius: 100px;
-  padding: 2px 11px;
-  margin: 0 6px 5px 0;
+  padding: 2px 12px;
+  margin: 0 6px 4px 0;
 }
 
 .pub-links a:hover {
@@ -448,19 +443,15 @@ ol.pubs > li::before {
   text-decoration: none;
 }
 
-/* Year markers are <h3> elements so the page has a real heading
-   outline. The rules below override the global h3 styling. */
+/* Year markers are <h3> elements so the page keeps a real heading
+   outline. These rules override the global h3 styling. */
 .year-head {
-  font-family: var(--sans);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--faint);
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   margin: 36px 0 14px;
 }
-
-/* Manuscripts are unnumbered, so they need no hanging indent. */
-ol.pubs#manuscripts > li { padding-left: 0; }
 
 /* ---------- teaching table ---------- */
 
@@ -469,8 +460,6 @@ table.courses {
   border-collapse: collapse;
   margin-top: 8px;
 }
-
-
 
 table.courses th,
 table.courses td {
@@ -481,10 +470,10 @@ table.courses td {
 }
 
 table.courses th {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--faint);
-  letter-spacing: 0.11em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border-bottom-color: var(--rule);
 }
@@ -493,28 +482,27 @@ table.courses td.term {
   white-space: nowrap;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
-  font-size: 16px;
+  font-size: 16.5px;
 }
 
 /* ---------- footer ---------- */
 
 footer.pagefoot {
-  margin-top: 68px;
+  margin-top: 64px;
   border-top: 1px solid var(--rule);
-  padding: 22px 0 52px;
+  padding: 20px 0 48px;
   color: var(--faint);
-  font-size: 13.5px;
-  letter-spacing: 0.02em;
+  font-size: 14px;
 }
 
 /* ---------- small screens ---------- */
 
 @media (max-width: 620px) {
-  body { font-size: 17px; }
+  body { font-size: 17.5px; }
 
   .wrap { padding: 0 20px; }
 
-  nav.topnav { margin-bottom: 34px; }
+  main.wrap::before { height: 52px; margin-bottom: 22px; }
 
   header.masthead {
     flex-direction: column;
@@ -522,12 +510,13 @@ footer.pagefoot {
     gap: 20px;
   }
 
-  header.masthead img.portrait { width: 108px; height: 108px; }
-  header.masthead h1 { font-size: 32px; }
+  header.masthead img.portrait { width: 112px; height: 112px; }
+  header.masthead h1 { font-size: 31px; }
 
-  p.lede { font-size: 19px; }
+  p.lede { font-size: 18px; }
 
-  h1.pagetitle { font-size: 30px; }
+  h1.pagetitle { font-size: 29px; }
+  h2 { font-size: 22px; }
 
   .interest-block { padding: 20px 0; }
 
