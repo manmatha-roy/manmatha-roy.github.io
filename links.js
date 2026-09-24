@@ -154,46 +154,40 @@ const PAPERS = {
     const spec = PAPERS[li.getAttribute("data-key")];
     if (!spec) return;
 
-    const title = (li.querySelector(".pub-title") || {}).textContent || "";
-    const row = document.createElement("div");
-    row.className = "pub-links";
+    const filled = Object.keys(spec).filter(k => spec[k]);
+    if (!filled.length) return;
 
-    const LABELS = { pdf: "PDF", doi: "DOI", eprint: "ePrint", arxiv: "arXiv" };
+    /* The venue name becomes the link to the paper. Whichever of these
+       is filled in first wins; the rest trail after it as small pills. */
+    const ORDER = ["link", "DOI", "doi", "OpenReview", "arXiv", "ePrint", "pdf", "PDF"];
+    let primary = ORDER.find(k => spec[k]) || filled[0];
 
-    /* A key of "link" is generic, so name the button after where it
-       actually goes. Anything not listed falls back to the key name. */
-    const BY_HOST = [
-      ["openreview.net",        "OpenReview"],
-      ["proceedings.neurips.cc","NeurIPS"],
-      ["proceedings.iclr.cc",   "ICLR"],
-      ["drops.dagstuhl.de",     "LIPIcs"],
-      ["link.springer.com",     "Springer"],
-      ["cic.iacr.org",          "IACR CiC"],
-      ["eprint.iacr.org",       "ePrint"],
-      ["arxiv.org",             "arXiv"],
-      ["doi.org",               "DOI"],
-      ["dblp.org",              "DBLP"],
-    ];
-
-    Object.keys(spec).forEach(key => {
-      const url = spec[key];
-      if (!url) return;
-
-      let text = LABELS[key.toLowerCase()] || key;
-      if (key.toLowerCase() === "link") {
-        text = "paper";
-        for (const [host, name] of BY_HOST) {
-          if (url.indexOf(host) !== -1) { text = name; break; }
-        }
-      }
-
+    const venue = li.querySelector(".pub-venue");
+    if (venue && !venue.closest("a")) {
       const a = document.createElement("a");
-      a.href = url;
-      a.textContent = text;
+      a.href = spec[primary];
+      a.className = "pub-venue";
+      a.textContent = venue.textContent;
+      venue.replaceWith(a);
+    } else {
+      primary = null;            // nothing to attach the link to
+    }
+
+    const LABELS = { pdf: "PDF", doi: "DOI", eprint: "ePrint", arxiv: "arXiv", link: "paper" };
+
+    const rest = filled.filter(k => k !== primary);
+    if (!rest.length) return;
+
+    const row = document.createElement("span");
+    row.className = "pub-links";
+    rest.forEach(key => {
+      const a = document.createElement("a");
+      a.href = spec[key];
+      a.textContent = LABELS[key.toLowerCase()] || key;
       row.appendChild(a);
     });
 
-    if (row.childNodes.length) li.appendChild(row);
+    (li.querySelector(".pub-meta") || li).appendChild(row);
   });
 
 })();
