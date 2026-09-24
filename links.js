@@ -54,7 +54,7 @@ const PAPERS = {
   "arithmetic-regularity":   { arXiv: "", ePrint: "", pdf: "" },
 
   /* --- published --- */
-  "distribution-free":       { arXiv: https://openreview.net/forum?id=Yptam5J8AE#discussion"", ePrint: "", pdf: "" },
+  "distribution-free":{ link: "https://openreview.net/forum?id=Yptam5J8AE#discussion", arXiv: "", slides: "", video: "" },
   "spectral-shadows": { link: "", arXiv: "", slides: "", video: "" },
   "implicit-sensing": { link: "https://proceedings.iclr.cc/paper_files/paper/2026/hash/634cb3ace86e0908a721865a73f2e36e-Abstract-Conference.html", arXiv: "", slides: "", poster: "" },
 
