@@ -330,7 +330,7 @@ ol.pubs { list-style: none; padding: 0; margin: 0; }
 
 ol.pubs > li {
   position: relative;
-  padding: 0 0 16px 26px;
+  padding: 0 0 16px 30px;
   margin-bottom: 16px;
   border-bottom: 1px solid var(--hairline);
 }
@@ -340,11 +340,11 @@ ol.pubs > li:last-child { border-bottom: 0; }
 ol.pubs > li::before {
   content: "\2022";
   position: absolute;
-  left: 4px;
+  left: 3px;
   top: 0;
-  color: var(--faint);
-  font-size: 17px;
-  line-height: 1.55;
+  color: var(--muted);
+  font-size: 30px;
+  line-height: 0.92;
 }
 
 .pub-title {
