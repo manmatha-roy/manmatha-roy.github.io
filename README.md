@@ -1,4 +1,4 @@
-# Personal site — Manmatha Roy
+# Personal site template
 
 Plain HTML and CSS. No build tools, no Jekyll, no JavaScript.
 
