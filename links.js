@@ -122,14 +122,12 @@ const PAPERS = {
   }
 
   /* --- number the entries ------------------------------------------- */
-  /* Published work only. Manuscripts under review are deliberately left
-     unnumbered so the list cannot be read as a longer publication count.
-     The oldest publication (bottom of the page) is 1, counting upwards.
-     Add or remove a paper and the numbering fixes itself.              */
+  /* One continuous sequence over manuscripts and publications. The
+     oldest entry (bottom of the page) is 1, counting upwards, so the
+     newest work carries the highest number. Add or remove a paper and
+     the numbering fixes itself.                                        */
 
-  const entries = Array.from(
-    document.querySelectorAll("ol.pubs:not(#manuscripts) > li")
-  );
+  const entries = Array.from(document.querySelectorAll("ol.pubs > li"));
   const total = entries.length;
   entries.forEach((li, i) => li.setAttribute("data-num", total - i));
 
