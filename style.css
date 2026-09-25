@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Open+Sans:wght@400;600;700&display=swap');
 
 /* ------------------------------------------------------------------
    Manmatha Roy — personal site
@@ -8,6 +8,9 @@
 
 :root {
   --sans:       'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Old-style figures for entry numbers and year markers — they sit on
+     the text baseline instead of standing up like table digits. */
+  --figures:    'EB Garamond', Georgia, 'Times New Roman', serif;
 
   --ink:        #444444;   /* headings                    */
   --text:       #515151;   /* body copy                   */
@@ -73,7 +76,7 @@ button:focus-visible {
 
 nav.topnav {
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 28px;
+  margin-bottom: 44px;
   background: var(--bg);
 }
 
@@ -112,19 +115,6 @@ nav.topnav a:hover::after { transform: scaleX(1); }
 
 nav.topnav a.current { color: var(--ink); }
 nav.topnav a.current::after { transform: scaleX(1); background: var(--ink); }
-
-/* ---------- spectrum strip ----------
-   A sparse Fourier spectrum: a flat field of near-zero coefficients with
-   a handful of large ones. Inline SVG, so no extra request, crisp at any
-   size. Decorative only. */
-
-main.wrap::before {
-  content: "";
-  display: block;
-  height: 66px;
-  margin-bottom: 28px;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27880%27%20height%3D%2766%27%20viewBox%3D%270%200%20880%2066%27%3E%3Crect%20x%3D%271%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2710%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2719%27%20y%3D%2759.0%27%20width%3D%272.6%27%20height%3D%273.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2728%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2737%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2746%27%20y%3D%2759.7%27%20width%3D%272.6%27%20height%3D%272.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2755%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2764%27%20y%3D%2730%27%20width%3D%272.6%27%20height%3D%2732%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%2773%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2782%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%2791%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27100%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27109%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27118%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27127%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27136%27%20y%3D%2759.5%27%20width%3D%272.6%27%20height%3D%272.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27145%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27154%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27163%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27172%27%20y%3D%2714%27%20width%3D%272.6%27%20height%3D%2748%27%20fill%3D%27%230055aa%27%20opacity%3D%270.8%27%2F%3E%3Crect%20x%3D%27181%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27190%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27199%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27208%27%20y%3D%2761.0%27%20width%3D%272.6%27%20height%3D%271.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27217%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27226%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27235%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27244%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27253%27%20y%3D%2742%27%20width%3D%272.6%27%20height%3D%2720%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27262%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27271%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27280%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27289%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27298%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27307%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27316%27%20y%3D%2759.9%27%20width%3D%272.6%27%20height%3D%272.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27325%27%20y%3D%2759.5%27%20width%3D%272.6%27%20height%3D%272.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27334%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27343%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27352%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27361%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27370%27%20y%3D%275%27%20width%3D%272.6%27%20height%3D%2757%27%20fill%3D%27%230055aa%27%20opacity%3D%270.8%27%2F%3E%3Crect%20x%3D%27379%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27388%27%20y%3D%2759.4%27%20width%3D%272.6%27%20height%3D%272.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27397%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27406%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27415%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27424%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27433%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27442%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27451%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27460%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27469%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27478%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27487%27%20y%3D%2761.0%27%20width%3D%272.6%27%20height%3D%271.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27496%27%20y%3D%2737%27%20width%3D%272.6%27%20height%3D%2725%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27505%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27514%27%20y%3D%2759.0%27%20width%3D%272.6%27%20height%3D%273.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27523%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27532%27%20y%3D%2758.8%27%20width%3D%272.6%27%20height%3D%273.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27541%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27550%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27559%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27568%27%20y%3D%2721%27%20width%3D%272.6%27%20height%3D%2741%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27577%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27586%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27595%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27604%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27613%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27622%27%20y%3D%2759.3%27%20width%3D%272.6%27%20height%3D%272.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27631%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27640%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27649%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27658%27%20y%3D%2760.9%27%20width%3D%272.6%27%20height%3D%271.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27667%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27676%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27685%27%20y%3D%2759.8%27%20width%3D%272.6%27%20height%3D%272.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27694%27%20y%3D%2760.0%27%20width%3D%272.6%27%20height%3D%272.0%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27703%27%20y%3D%2745%27%20width%3D%272.6%27%20height%3D%2717%27%20fill%3D%27%23c4c1b2%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27712%27%20y%3D%2760.6%27%20width%3D%272.6%27%20height%3D%271.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27721%27%20y%3D%2759.4%27%20width%3D%272.6%27%20height%3D%272.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27730%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27739%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27748%27%20y%3D%2760.7%27%20width%3D%272.6%27%20height%3D%271.3%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27757%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27766%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27775%27%20y%3D%2760.4%27%20width%3D%272.6%27%20height%3D%271.6%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27784%27%20y%3D%2758.9%27%20width%3D%272.6%27%20height%3D%273.1%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27793%27%20y%3D%2759.2%27%20width%3D%272.6%27%20height%3D%272.8%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27802%27%20y%3D%2760.3%27%20width%3D%272.6%27%20height%3D%271.7%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27811%27%20y%3D%2733%27%20width%3D%272.6%27%20height%3D%2729%27%20fill%3D%27%239a968a%27%20opacity%3D%270.65%27%2F%3E%3Crect%20x%3D%27820%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27829%27%20y%3D%2760.5%27%20width%3D%272.6%27%20height%3D%271.5%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27838%27%20y%3D%2760.1%27%20width%3D%272.6%27%20height%3D%271.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27847%27%20y%3D%2759.1%27%20width%3D%272.6%27%20height%3D%272.9%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27856%27%20y%3D%2759.6%27%20width%3D%272.6%27%20height%3D%272.4%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%27865%27%20y%3D%2760.8%27%20width%3D%272.6%27%20height%3D%271.2%27%20fill%3D%27%23e0ded0%27%20opacity%3D%271%27%2F%3E%3Crect%20x%3D%270%27%20y%3D%2762%27%20width%3D%27880%27%20height%3D%271%27%20fill%3D%27%23e2e0d4%27%2F%3E%3C%2Fsvg%3E") left bottom / auto 100% repeat-x;
-}
 
 /* ---------- header block ---------- */
 
@@ -171,17 +161,6 @@ h2 {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--rule);
 }
-
-h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 51px;
-  height: 16px;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2751%27%20height%3D%2716%27%20viewBox%3D%270%200%2051%2016%27%3E%3Crect%20x%3D%270%27%20y%3D%2711%27%20width%3D%273%27%20height%3D%275%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%278%27%20y%3D%270%27%20width%3D%273%27%20height%3D%2716%27%20fill%3D%27%230055aa%27%2F%3E%3Crect%20x%3D%2716%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%2724%27%20y%3D%275%27%20width%3D%273%27%20height%3D%2711%27%20fill%3D%27%239a968a%27%2F%3E%3Crect%20x%3D%2732%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3Crect%20x%3D%2740%27%20y%3D%279%27%20width%3D%273%27%20height%3D%277%27%20fill%3D%27%239a968a%27%2F%3E%3Crect%20x%3D%2748%27%20y%3D%2713%27%20width%3D%273%27%20height%3D%273%27%20fill%3D%27%23d9d6c6%27%2F%3E%3C%2Fsvg%3E") left bottom no-repeat;
-}
-
 h3 {
   font-size: 19px;
   font-weight: 600;
@@ -242,8 +221,6 @@ p.lede strong { font-weight: 600; }
   border-bottom: 0;
   position: static;
 }
-
-.interest-block h2::after { content: none; }
 
 ul.taglist {
   list-style: none;
@@ -363,9 +340,6 @@ ol.pubs > li {
 
 ol.pubs > li:last-child { border-bottom: 0; }
 
-/* Manuscripts are unnumbered, so they need no hanging indent. */
-ol.pubs#manuscripts > li { padding-left: 0; }
-
 /* The number is written in by links.js: one sequence over the published
    work, counting up from the oldest entry at the bottom. If the script
    does not run, data-num is absent and no number shows. */
@@ -373,12 +347,15 @@ ol.pubs > li::before {
   content: attr(data-num);
   position: absolute;
   left: 0;
-  top: 4px;
+  top: 1px;
   width: 24px;
   text-align: right;
   color: var(--faint);
-  font-variant-numeric: tabular-nums;
-  font-size: 14px;
+  font-family: var(--figures);
+  font-size: 19px;
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1;
+  line-height: 1.35;
 }
 
 .pub-title {
@@ -446,11 +423,14 @@ a.pub-venue:hover {
 /* Year markers are <h3> elements so the page keeps a real heading
    outline. These rules override the global h3 styling. */
 .year-head {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--faint);
-  letter-spacing: 0.12em;
-  margin: 36px 0 14px;
+  font-family: var(--figures);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1;
+  margin: 34px 0 12px;
 }
 
 /* ---------- teaching table ---------- */
@@ -501,8 +481,6 @@ footer.pagefoot {
   body { font-size: 17.5px; }
 
   .wrap { padding: 0 20px; }
-
-  main.wrap::before { height: 52px; margin-bottom: 22px; }
 
   header.masthead {
     flex-direction: column;
