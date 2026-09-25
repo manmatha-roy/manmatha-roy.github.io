@@ -290,6 +290,20 @@ dl.timeline dd { margin: 0 0 0 154px; padding: 5px 0; }
 
 /* ---------- profile links row ---------- */
 
+p.convention {
+  font-size: 15.5px;
+  color: var(--muted);
+  margin: 18px 0 0;
+}
+
+.alpha-star {
+  color: var(--faint);
+  font-weight: 400;
+  vertical-align: super;
+  font-size: 0.7em;
+  margin-left: 1px;
+}
+
 p.profilerow {
   color: var(--muted);
   font-size: 16px;
