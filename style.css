@@ -270,6 +270,8 @@ dl.fields dt {
 
 dl.fields dd { margin: 0 0 0 140px; padding: 3px 0; }
 
+.note { color: var(--faint); font-size: 15px; }
+
 /* ---------- timeline ---------- */
 
 dl.timeline { margin: 0; }
