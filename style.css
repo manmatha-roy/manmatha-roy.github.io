@@ -9,27 +9,34 @@
 :root {
   --sans:       'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  --ink:        #444444;   /* headings                    */
-  --text:       #515151;   /* body copy                   */
-  --muted:      #6b6b6b;   /* secondary text              */
-  --faint:      #8e8e88;   /* labels, numbers, footer     */
+  --ink:        #444444;
+  --text:       #515151;
+  --muted:      #6b6b6b;
+  --faint:      #8e8e88;
 
-  --rule:       #e2e0d4;   /* section rules, nav border   */
-  --hairline:   #edebe0;   /* rules between entries       */
+  --rule:       #e2e0d4;
+  --hairline:   #edebe0;
 
-  --accent:     #0055aa;   /* links                       */
-  --accent-dk:  #003d7a;   /* link hover                  */
+  --accent:     #0055aa;
+  --accent-dk:  #003d7a;
 
-  --bg:         #fffff8;   /* warm paper                  */
+  --bg:         #fffff8;
   --panel:      #faf9ee;
   --card:       #fffffc;
 
   --measure:    880px;
 }
 
-* { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+/* ---------- base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
@@ -47,6 +54,7 @@ body {
   margin: 0 auto;
   padding: 0 24px;
 }
+
 
 /* ---------- utilities ---------- */
 
@@ -68,6 +76,7 @@ button:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
 
 /* ---------- navigation ---------- */
 
@@ -107,18 +116,42 @@ nav.topnav a::after {
   transition: transform 0.18s ease;
 }
 
-nav.topnav a:hover { color: var(--accent); }
-nav.topnav a:hover::after { transform: scaleX(1); }
+nav.topnav a:hover {
+  color: var(--accent);
+}
 
-nav.topnav a.current { color: var(--ink); }
-nav.topnav a.current::after { transform: scaleX(1); background: var(--ink); }
+nav.topnav a:hover::after {
+  transform: scaleX(1);
+}
 
-/* ---------- header block ---------- */
+nav.topnav a.current {
+  color: var(--ink);
+}
+
+nav.topnav a.current::after {
+  transform: scaleX(1);
+  background: var(--ink);
+}
+
+
+/* ---------- header / masthead ---------- */
+
+/*
+   Desktop layout:
+
+   PHOTO       NAME
+               DESIGNATION
+               PROFILE ICONS
+
+   The photo stays on the left.
+   The text block is centered within the right column.
+*/
 
 header.masthead {
-  display: flex;
+  display: grid;
+  grid-template-columns: 140px 1fr;
   align-items: center;
-  gap: 32px;
+  column-gap: 32px;
   margin-bottom: 34px;
 }
 
@@ -129,7 +162,13 @@ header.masthead img.portrait {
   object-fit: cover;
   flex: 0 0 auto;
   background: var(--panel);
-  box-shadow: 0 0 0 1px var(--rule), 0 6px 20px rgba(80, 75, 50, 0.08);
+  box-shadow:
+    0 0 0 1px var(--rule),
+    0 6px 20px rgba(80, 75, 50, 0.08);
+}
+
+header.masthead > div {
+  text-align: center;
 }
 
 header.masthead h1 {
@@ -142,10 +181,54 @@ header.masthead h1 {
 }
 
 header.masthead .role {
-  margin: 0;
+  margin: 0 0 9px;
   color: var(--muted);
   font-size: 17px;
 }
+
+
+/* ---------- profile links ---------- */
+
+p.profilerow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+     Explicitly remove the old profile box.
+  */
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.profilerow a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--muted);
+  text-decoration: none;
+
+  font-size: 1.35rem;
+  line-height: 1;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.profilerow a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
 
 /* ---------- typography ---------- */
 
@@ -158,6 +241,7 @@ h2 {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--rule);
 }
+
 h3 {
   font-size: 19px;
   font-weight: 600;
@@ -173,9 +257,14 @@ h1.pagetitle {
   margin: 0 0 18px;
 }
 
-p { margin: 0 0 16px; }
+p {
+  margin: 0 0 16px;
+}
 
-a { color: var(--accent); text-decoration: none; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
 a:hover {
   color: var(--accent-dk);
@@ -183,11 +272,22 @@ a:hover {
   text-underline-offset: 2px;
 }
 
-ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-p.lede { font-size: 19px; line-height: 1.6; margin-bottom: 20px; }
+p.lede {
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
-p.lede strong { font-weight: 600; }
+p.lede strong {
+  font-weight: 600;
+}
+
 
 /* ---------- interests ---------- */
 
@@ -199,7 +299,9 @@ p.lede strong { font-weight: 600; }
   margin: 0 0 28px;
 }
 
-.interest-block { padding: 20px 28px 22px 0; }
+.interest-block {
+  padding: 20px 28px 22px 0;
+}
 
 .interest-block + .interest-block {
   padding-left: 28px;
@@ -238,13 +340,24 @@ ul.taglist li {
   padding: 3px 13px;
 }
 
-p.interest-note { margin: 0; font-size: 16.5px; color: var(--muted); }
+p.interest-note {
+  margin: 0;
+  font-size: 16.5px;
+  color: var(--muted);
+}
+
 
 /* ---------- highlighted link list ---------- */
 
-ul.highlights { list-style: none; padding: 0; margin: 6px 0 0; }
+ul.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+}
 
-ul.highlights li { margin: 0 0 10px; }
+ul.highlights li {
+  margin: 0 0 10px;
+}
 
 ul.highlights li::before {
   content: "\2192";
@@ -252,9 +365,12 @@ ul.highlights li::before {
   margin-right: 11px;
 }
 
+
 /* ---------- labelled field list (contact) ---------- */
 
-dl.fields { margin: 0; }
+dl.fields {
+  margin: 0;
+}
 
 dl.fields dt {
   float: left;
@@ -268,13 +384,22 @@ dl.fields dt {
   padding: 8px 0 0;
 }
 
-dl.fields dd { margin: 0 0 0 140px; padding: 3px 0; }
+dl.fields dd {
+  margin: 0 0 0 140px;
+  padding: 3px 0;
+}
 
-.note { color: var(--faint); font-size: 15px; }
+.note {
+  color: var(--faint);
+  font-size: 15px;
+}
+
 
 /* ---------- timeline ---------- */
 
-dl.timeline { margin: 0; }
+dl.timeline {
+  margin: 0;
+}
 
 dl.timeline dt {
   float: left;
@@ -286,9 +411,13 @@ dl.timeline dt {
   padding: 5px 0;
 }
 
-dl.timeline dd { margin: 0 0 0 154px; padding: 5px 0; }
+dl.timeline dd {
+  margin: 0 0 0 154px;
+  padding: 5px 0;
+}
 
-/* ---------- profile links row ---------- */
+
+/* ---------- convention / publication notes ---------- */
 
 p.convention {
   font-size: 15.5px;
@@ -304,15 +433,6 @@ p.convention {
   margin-left: 1px;
 }
 
-p.profilerow {
-  color: var(--muted);
-  font-size: 16px;
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  padding: 11px 16px;
-  margin-bottom: 4px;
-}
 
 /* ---------- author links ---------- */
 
@@ -328,6 +448,7 @@ a.author-link:hover {
   text-decoration: none;
 }
 
+
 /* ---------- collaborator list ---------- */
 
 ul.people {
@@ -338,11 +459,20 @@ ul.people {
   column-gap: 44px;
 }
 
-ul.people li { margin: 0 0 9px; break-inside: avoid; font-size: 17px; }
+ul.people li {
+  margin: 0 0 9px;
+  break-inside: avoid;
+  font-size: 17px;
+}
+
 
 /* ---------- publications ---------- */
 
-ol.pubs { list-style: none; padding: 0; margin: 0; }
+ol.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 ol.pubs > li {
   position: relative;
@@ -368,11 +498,14 @@ ol.pubs > li::before {
   margin-bottom: 2px;
 }
 
-.pub-authors { color: var(--muted); font-size: 16.5px; }
+.pub-authors {
+  color: var(--muted);
+  font-size: 16.5px;
+}
 
-/* The venue sits on its own line under the authors and carries the
-   link to the paper, so there is one obvious thing to click. */
-.pub-meta { margin-top: 3px; }
+.pub-meta {
+  margin-top: 3px;
+}
 
 .pub-venue {
   font-style: normal;
@@ -381,7 +514,9 @@ ol.pubs > li::before {
   color: var(--text);
 }
 
-a.pub-venue { color: var(--accent); }
+a.pub-venue {
+  color: var(--accent);
+}
 
 a.pub-venue:hover {
   color: var(--accent-dk);
@@ -389,7 +524,9 @@ a.pub-venue:hover {
   text-underline-offset: 2px;
 }
 
-/* Same row, for manuscripts that have no venue yet. */
+
+/* ---------- manuscript status ---------- */
+
 .pub-status {
   font-size: 12.5px;
   font-weight: 600;
@@ -398,9 +535,13 @@ a.pub-venue:hover {
   color: var(--faint);
 }
 
-/* Anything beyond the venue link — slides, a poster, code — trails
-   after it as a small pill. */
-.pub-links { display: inline; margin-left: 10px; }
+
+/* ---------- publication links ---------- */
+
+.pub-links {
+  display: inline;
+  margin-left: 10px;
+}
 
 .pub-links a {
   display: inline-block;
@@ -422,8 +563,9 @@ a.pub-venue:hover {
   text-decoration: none;
 }
 
-/* Year markers are <h3> elements so the page keeps a real heading
-   outline. These rules override the global h3 styling. */
+
+/* ---------- publication year ---------- */
+
 .year-head {
   font-size: 19px;
   font-weight: 600;
@@ -432,6 +574,7 @@ a.pub-venue:hover {
   font-variant-numeric: proportional-nums;
   margin: 34px 0 12px;
 }
+
 
 /* ---------- teaching table ---------- */
 
@@ -465,6 +608,7 @@ table.courses td.term {
   font-size: 16.5px;
 }
 
+
 /* ---------- footer ---------- */
 
 footer.pagefoot {
@@ -475,28 +619,60 @@ footer.pagefoot {
   font-size: 14px;
 }
 
+
 /* ---------- small screens ---------- */
 
 @media (max-width: 620px) {
-  body { font-size: 17.5px; }
 
-  .wrap { padding: 0 20px; }
-
-  header.masthead {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  body {
+    font-size: 17.5px;
   }
 
-  header.masthead img.portrait { width: 112px; height: 112px; }
-  header.masthead h1 { font-size: 31px; }
+  .wrap {
+    padding: 0 20px;
+  }
 
-  p.lede { font-size: 18px; }
+  /*
+     On phones, stack the photo above the
+     centered name/designation/profile links.
+  */
 
-  h1.pagetitle { font-size: 29px; }
-  h2 { font-size: 22px; }
+  header.masthead {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
 
-  .interest-block { padding: 20px 0; }
+  header.masthead img.portrait {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto;
+  }
+
+  header.masthead > div {
+    text-align: center;
+  }
+
+  header.masthead h1 {
+    font-size: 31px;
+  }
+
+  p.lede {
+    font-size: 18px;
+  }
+
+  h1.pagetitle {
+    font-size: 29px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .interest-block {
+    padding: 20px 0;
+  }
 
   .interest-block + .interest-block {
     padding-left: 0;
@@ -504,7 +680,9 @@ footer.pagefoot {
     border-top: 1px solid var(--hairline);
   }
 
-  ul.people { columns: 1; }
+  ul.people {
+    columns: 1;
+  }
 
   dl.fields dt,
   dl.timeline dt {
@@ -521,56 +699,16 @@ footer.pagefoot {
   }
 }
 
+
 /* ---------- reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
 
-.masthead {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.masthead .portrait {
-  margin: 0 auto 1rem;
-}
-
-.masthead h1 {
-  margin-bottom: 0.35rem;
-}
-
-.masthead .role {
-  margin-bottom: 0.7rem;
-}
-
-.profilerow {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  box-shadow: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.profilerow a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.profilerow a:hover {
-  color: var(--text);
 }
