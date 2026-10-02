@@ -44,7 +44,7 @@ const SUMMARIES = {
     button.type = 'button';
     button.className = 'pub-summary-toggle';
     button.id = panelId + '-toggle';
-    button.textContent = 'Show summary';
+    button.textContent = 'summary';
     button.setAttribute('aria-expanded', 'false');
     button.setAttribute('aria-controls', panelId);
 
@@ -61,7 +61,6 @@ const SUMMARIES = {
       const expand = button.getAttribute('aria-expanded') !== 'true';
       panel.hidden = !expand;
       button.setAttribute('aria-expanded', String(expand));
-      button.textContent = expand ? 'Hide summary' : 'Show summary';
     });
 
     links.appendChild(button);
