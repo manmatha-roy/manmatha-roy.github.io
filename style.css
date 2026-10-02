@@ -758,7 +758,18 @@ footer.pagefoot {
 .research-page .pub-body { min-width: 0; overflow-wrap: anywhere; }
 .research-page .pub-title { margin-bottom: 7px; }
 .research-page .pub-meta { margin-top: 8px; }
-.research-page .pub-links { display: inline-flex; flex-wrap: wrap; vertical-align: middle; }
+.research-page .pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+.research-page .pub-links a,
+.research-page .pub-links .pub-summary-toggle {
+  top: 0;
+  margin: 0;
+}
 @media (max-width: 680px) {
   .research-page ol.pubs > li.pub-entry { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0; }
   .research-page .pub-thumb { width: min(100%, 280px); }
