@@ -1,25 +1,24 @@
 /*
-  Edit summary text here. The keys match data-key in research.html.
-  These are starter descriptions based on the supplied titles, not verified
-  abstracts. Review or replace them with your own summaries before publishing.
+  Research summaries based on the supplied abstracts.
+  The keys match data-key in research.html.
   Use a blank string to omit a summary button. Separate paragraphs with a blank line.
   Keep links in links.js and all visual styles in style.css.
 */
 const SUMMARIES = {
-  "nonlinearity-estimation": "How far is a Boolean function from a simple affine rule? This work studies the problem of estimating that distance, a measure known as nonlinearity.",
-  "sumset-size": "If we add every pair of elements from a set, how many distinct sums do we obtain? This work studies estimating that number by organizing the set into dense pieces within cosets.",
-  "near-optimal-testing": "Can we tell whether a function has a short Fourier representation without examining all its values? This work studies how to test Fourier sparsity while keeping the number of queries small.",
-  "exact-recovery": "A Fourier-sparse function can be described by a small collection of coefficients. This work studies how to recover that representation exactly from observations of the function.",
-  "arithmetic-regularity": "Complicated objects can become easier to understand when organized into structured pieces. This work studies constructive arithmetic regularity for Abelian groups, where the group operation is commutative.",
-  "distribution-free": "In practice, samples need not be uniformly distributed. This work studies testing whether a function has a sparse Fourier representation in the distribution-free setting.",
-  "spectral-shadows": "How much information must two parties exchange to test a relationship between functions? This work connects communication complexity with testing properties that remain unchanged under linear transformations.",
-  "implicit-sensing": "A function may have a simple Fourier representation even when its full description is very large. This work studies testing for that sparsity through implicit sensing, using queries to access information about the function.",
-  "economical-sieve": "This work brings together spectral norm, filtering significant Fourier components, and testing Boolean-function properties that are preserved by linear transformations. Its focus is on finding useful structure with limited access to a function.",
-  "price-of-parsimony": "A sparse Fourier representation uses only a few components. This work studies the complexity of checking whether such a compact representation exists, and the resources needed for Fourier sparsity testing.",
-  "iso-abelian": "Two Boolean functions can describe the same pattern after the underlying group elements are relabeled by an automorphism. This work studies testing that form of equivalence over Abelian groups.",
-  "maiorana-mcfarland": "Boolean functions used in cryptography need both suitable mathematical properties and practical implementations. This work studies constructions of the Maiorana–McFarland type with those implementation considerations in mind.",
-  "bent-balanced": "Bent functions have strong nonlinearity, but their outputs are not balanced. This work studies modifying them to obtain equal numbers of zeros and ones while retaining high nonlinearity.",
-  "sbox-spectra": "S-boxes are small substitution components used in cryptographic systems. This work experimentally examines higher-order differential spectra of invertible 6-bit and 8-bit S-boxes, looking at how structured input changes affect their outputs."
+  "nonlinearity-estimation": "We estimate the largest Fourier coefficient in magnitude of a Boolean function to additive error ±τ using Õ(1/τ²) oracle queries. A matching Ω(1/τ²) lower bound establishes optimality up to polylogarithmic factors, with an application to cube testing.",
+  "sumset-size": "We approximate sets of bounded Fourier spectral norm by unions of dense cosets with low codimension, achieving polynomial dependence on the inverse error and nearly linear dependence on the norm. A constructive version gives a polynomial-query algorithm for estimating sumset size.",
+  "near-optimal-testing": "We test whether a Boolean function is s-Fourier sparse or ε-far from every such function using Õ(s/ε + 1/ε²) nonadaptive queries. For fixed ε, this is nearly linear in s and matches the Ω(s) lower bound up to polylogarithmic factors.",
+  "exact-recovery": "A simple randomized algorithm exactly recovers all nonzero Fourier coefficients of a k-sparse function on the Boolean hypercube. It uses O(nk) oracle queries and O(nk log k) time, attaining optimal query complexity up to constant factors.",
+  "arithmetic-regularity": "We construct Green’s arithmetic regularity decomposition for finite Abelian groups of constant torsion using oracle access. Time and query bounds are polynomial in the regularity parameters and tower bound, independent of group size, with applications to configuration removal and counting systems of Cauchy–Schwarz complexity one.",
+  "distribution-free": "We initiate distribution-free testing of Fourier sparsity for real-valued functions, measuring distance under an arbitrary unknown input distribution. Our nonadaptive randomized tester distinguishes s-sparse functions from those δ-far from every such function using Õ((s/δ)⁴) oracle queries and Õ(1/δ) samples.",
+  "spectral-shadows": "We study how much Alice and Bob must communicate to decide whether two Boolean functions are linearly isomorphic or far from equivalent. Protocols and lower bounds identify approximate spectral norm as the key complexity measure, with private randomness improving the deterministic dependence quadratically.",
+  "implicit-sensing": "We give a dimension-independent tester for Boolean Fourier sparsity using Õ(s⁴) queries and prove an Ω(s) lower bound. The upper bound combines refined sampling with compressed sensing, while the lower bound follows from communication complexity.",
+  "economical-sieve": "We test tolerant linear isomorphism using Õ((m/ω)⁴) queries, with an Ω(m) lower bound, where m bounds the spectral norm and ω is the tolerance gap. The method uses local list correction of Hadamard codes and supports oracle access to both functions.",
+  "price-of-parsimony": "We estimate a real-valued function’s squared ℓ₂-distance to the nearest s-Fourier-sparse function, with query complexity nearly linear in s and optimal 1/ε² dependence. Spectral concentration under random affine restrictions gives dimension-independent bounds with only logarithmic dependence on the eighth moment.",
+  "iso-abelian": "Given query access to f and a fully known reference g on a finite Abelian group, we test whether the functions are close under some automorphism or far under every automorphism. The tester uses poly(s, 1/τ) queries, where s bounds g’s spectral norm and τ is the tolerance gap.",
+  "maiorana-mcfarland": "We develop a Maiorana–McFarland variant that produces balanced Boolean functions with high nonlinearity, low absolute autocorrelation and high algebraic degree. The construction emphasizes implementation with few gates of fan-in at most two, connecting cryptographic quality with circuit efficiency.",
+  "bent-balanced": "We develop a combinatorial framework connecting weight, nonlinearity and Walsh–Hadamard spectra to study highly nonlinear balanced Boolean functions. It unifies earlier constructions based on modifying bent functions and provides examples on 8, 10, 12 and 14 variables, informing the study of Dobbertin’s conjecture.",
+  "sbox-spectra": "We experimentally compare higher-order differential spectra of multiplicative inverse S-boxes and an APN permutation. The observed larger second-order bias of the APN example motivates further investigation of higher-order differential attacks."
 };
 
 (function () {
